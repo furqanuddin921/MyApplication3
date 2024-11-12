@@ -1,0 +1,82 @@
+<ion-view view-title="Berita & Promo" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+      <div class="menu-absolute">
+        <button menu-toggle="left"><span class="icon-menu"></span></button>
+      </div>
+      <div class="navbartitle">Uber Milyaran</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+      </div>
+      <div ng-controller="HeaderIconCtrl">
+          <div class="inbox" ng-show="showMessageIcon">
+          <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+          <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+        </div>
+        <div class="profileicon" ng-show="showMessageIcon">
+          <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+        </div>
+      </div>
+
+  </section>
+
+  <ion-content>
+
+    <div style="height: 44px;"></div>
+
+    <div class="new-banner-uber">
+      <img src="assets/img/uber-milyaran.jpg">      
+    </div>
+
+    <div class="new-kupon-anda">
+      <!-- <h5 class="font-proxima-light">Jumlah Kupon UBER Milyaran Anda</h5>
+      <h1 class="font-proxima-bold">{{totalKuponAll}}</h1>
+      <h6 class="font-proxima-regular">Kupon</h6> -->
+    </div>
+
+    <div class="informasi-uber font-proxima-regular">
+      <div class="isi-info">
+        <div class="new-isi-infoUber martop20">
+          <h4>periode <span>{{periodeKe}}</span></h4>
+          <p>Berlaku dari <span>{{periodeBerlaku}}</span></p>
+        </div>
+        <div class="isi-infoUber">
+          <h4>pemenang periode sebelumnya</h4>
+          <p>{{pemenangPeriode}}</p>
+        </div>
+        <div class="isi-infoUber">
+          <h4>pengundian berikutnya</h4>
+          <p>{{periodeSelanjutnya}}</p>
+        </div>
+      </div>
+      <div class="garing-container">
+        <div class="new-garing"></div>
+      </div>
+    </div>
+
+    <div class="new-uber-table">
+      <table class="table table-kupon">
+        <thead>
+          <tr>
+            <th class="new-uber-table-head uber-table-head uber-table-head-1" style="width: 50%; border-right: 1px solid #fff;">Nomor Kontrak</th>
+            <th class="new-uber-table-head uber-table-head" style="width: 50%">Kupon</th>
+          </tr>
+        </thead>
+        <tbody ng-repeat="kuponList in event.listKontrakKupon" style="background-color: #fff;">
+          <tr>
+            <td>{{kuponList.AgreementNo}}</td>
+            <td>{{kuponList.TotalKupon}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="height: 49px; width: 100%;"></div>
+    
+  </ion-content>
+    
+  <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

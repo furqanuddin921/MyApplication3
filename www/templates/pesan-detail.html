@@ -1,0 +1,79 @@
+<ion-view view-title="Inbox Detail" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+      <div class="menu-absolute new-menu-absolute">
+        <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+      </div>
+      <div class="navbartitle">Inbox Detail</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+    </div>
+    <div ng-controller="HeaderIconCtrl">
+        <div class="inbox" ng-show="showMessageIcon">
+        <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+        <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+      </div>
+      <div class="profileicon" ng-show="showMessageIcon">
+        <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+      </div>
+    </div>
+
+  </section>
+
+  <ion-content class="new-dashboar-color">
+
+    <div style="height: 40px;"></div>
+
+    <section>
+      <div class="card">
+         <div class = "item content-pesan-detail">
+            <div class="container">
+
+              <h3>{{title}}</h3>
+              <p>{{blastDate}}</p>
+              <p>Status : New</p>
+
+              <div class="inbox-detail-content">
+                <p ng-bind-html="message"></p>
+<!--
+                <table class="table inbox-detail-content">
+                  <tr>
+                    <td>Nama</td>
+                    <td>: Leo Messi</td>
+                  </tr>
+                  <tr>
+                    <td>Tahun</td>
+                    <td>: 2017</td>
+                  </tr>
+                  <tr>
+                    <td>Nomor Plat</td>
+                    <td>: 1259 TCO</td>
+                  </tr>
+                </table>
+-->
+              </div>
+              <hr>
+<!--
+              <div class="text-center">
+                <button type="submit" class="button new-btn-submit-red-1 new-btn-registered" style="width: 70% !important;" ng-click="doBack()"> Hapus</button>
+              </div>
+-->
+
+            </div>
+         </div>
+      </div>
+    </section>
+
+    <div class="text-center">
+      <button type="submit" class="button new-btn-submit-orange new-btn-registered" style="width: 70% !important;" ng-click="doBack()"> Kembali</button>
+    </div>
+
+    <div style="height: 49px; width: 100%;"></div>
+
+  </ion-content>
+    
+  <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

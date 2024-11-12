@@ -1,0 +1,116 @@
+<ion-view view-title="Simulasi Kredit" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+      <div class="menu-absolute new-menu-absolute">
+        <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+      </div>
+      <div class="navbartitle">Simulasi Kredit</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+      </div>
+      <div ng-controller="HeaderIconCtrl">
+          <div class="inbox" ng-show="showMessageIcon">
+          <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+          <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+        </div>
+        <div class="profileicon" ng-show="showMessageIcon">
+          <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+        </div>
+      </div>
+
+  </section>
+  
+  <ion-content style="background-color: #fff;">
+
+    <div class="separatortop"></div>
+
+    <!--  SIMULATOR -->
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-cal">
+      <div class="title-page"><h4 class="font-proxima-regular">Data Pemohon Pembiayaan</h4></div>
+      <form ng-submit="doAjuanSubmit()" class="calculator">
+
+        <label class="checkbox {{element_cek}}">
+          <input type="checkbox" style="margin-left: -8px;" ng-model="submit.cekSendiri" ng-checked="{{ceked}}" ng-change="doCekList(submit.cekSendiri)"> 
+          <p style="padding: 5px 0px 0px 30px;" class="font-proxima-regular">Pengajuan atas nama sendiri</p>
+        </label>
+
+        <div  id="selectNama" class="form-group">
+          <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Nama Sesuai KTP <span color="red">*</span></span></label>
+          <input type="text" class="input form-control new-text-right new-borderbottom" name="fullname" id="fullname" ng-model="submit.fullname" placeholder="Contoh: Ridwan Ghani" ng-blur="doLoadFullname(submit.fullname)" alpha-only ng-disabled="(submit.cekSendiri) ? true : false">
+        </div>
+
+        <div  id="selectHandphone" class="form-group">
+          <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Nomor Handphone <span color="red">*</span></span></label>
+          <input type="text" class="input form-control new-text-right new-borderbottom" name="handphone" id="handphone" ng-model="submit.handphone" placeholder="Contoh: 6281256788650" ng-blur="doLoadHandphone(submit.handphone)" numbers-only ng-disabled="(submit.cekSendiri) ? true : false" maxlength="14">
+        </div>
+
+<!--
+        <div  id="selectEmail" class="form-group">
+          <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Email <span color="red">*</span></span></label>
+          <input type="text" class="input form-control new-text-right new-borderbottom" name="email" id="email" ng-model="submit.email" placeholder="Contoh: john@gmail.com" ng-blur="doLoadEmail(submit.email)" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-disabled="(submit.cekSendiri) ? true : false">
+          <small class="error" ng-show="registerForm.email.$error.email" style="color: red;font-style: italic;">Email tidak valid.</small>
+        </div>
+-->
+				<div  id="selectEmail" class="form-group">
+          <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Email <span color="red">*</span></span></label>
+          <input type="text" class="input form-control new-text-right new-borderbottom" name="email" id="email" ng-model="submit.email" placeholder="Contoh: john@gmail.com" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-disabled="(submit.cekSendiri) ? true : false">
+          <small class="error" ng-show="registerForm.email.$error.email" style="color: red;font-style: italic;">Email tidak valid.</small>
+        </div>
+
+        <div  id="selectHandphone" class="form-group">
+          <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Deskripsi Agunan <span color="red">*</span></span></label>
+          <input type="text" class="input form-control new-text-right new-borderbottom" name="deskAsset" id="deskAsset" ng-model="submit.deskAsset" placeholder="{{placeDeskripsi}}">
+        </div>
+
+        <div  id="selectPassword" class="form-group {{class_password}} password-wrap relinput">
+          <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Input <em>Password</em> <span color="red">*</span></span></label>
+          <input type="{{input_type}}" class="input form-control new-text-right new-borderbottom" id="inputPassword" name="inputPassword" ng-model="submit.inputPassword" placeholder="Password Anda">
+          <a ng-click="doLoadPassword()" class="see new-new-see-me"><i class="ion-eye"></i></a>
+          <p class="minimpass">Minimum Password 6 Digit</p>
+        </div>
+
+        <div class="text-justify" style="margin: 10px auto; font-size: 10px;" ng-show="textPassword">
+          <ul class="">
+            <li>* Kami akan mendaftarkan account anda, silahkan masukan password (min. 6 digit) yang anda inginkan dan silakan aktifkan account Anda dengan cara membuka email yang sudah anda daftarkan.</li>
+            <li>** Anda dapat mengecek status pengajuan aplikasi anda di menu Lacak Aplikasi setelah login menggunakan email dan password yang anda daftarkan</li>
+          </ul>
+        </div>
+
+        <div class="text-center">
+           <button  type="submit" class="button new-btn-submit-orange btn-register-text new-btn-registered font-proxima-regular" style="width: 70% !important; margin-top: 15px !important;"> Submit</button>
+        </div>
+
+          
+        </form>
+
+        
+<div style="height:80px;"></div>
+      </div>
+      <div class="clearfix"></div>
+      <!--  END SIMULATOR -->
+    </ion-content>
+     <!-- FOOTER HIDDEN -->
+   <ion-footer-bar class="hide-on-keyboard-open">
+        <div ng-controller="footerCtrl" class="tabs tabs-icon-top">
+            <a ng-click="doAuth()" class="tab-item" tour-step="6" tour-on-start="onStart" tour-on-leave="onLeave">
+              <img src="assets/img/new-home.svg" class="new-icon-image">
+            </a>
+            <a href="#/app/simulasikredit/5000000" class="tab-item" tour-step="7" tour-on-start="onStart" tour-on-leave="onLeave">
+              <img src="assets/img/new-simulation.svg" class="new-icon-image">
+            </a>
+            <a ng-click="doShare()" class="tab-item" tour-step="8" tour-step="8" tour-on-start="onStart" tour-on-leave="onLeave">
+              <img src="assets/img/new-share-socmed.svg" class="new-icon-image">
+            </a>
+            <a href="#/app/signin" class="tab-item {{belumLogin}}" tour-step="9" tour-on-start="onStart" tour-on-leave="onLeave">
+              <img src="assets/img/new-signin.svg" class="new-icon-image">
+            </a>
+            <a ng-click="doLogout()" class="tab-item {{sudahLogin}}">
+              <img src="assets/img/new-signup.svg" class="new-icon-image">
+            </a>
+        </div>
+  </ion-footer-bar>
+  <!-- FOOTER HIDDEN -->
+  </ion-view>

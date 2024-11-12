@@ -1,0 +1,244 @@
+<ion-view view-title="Smart Rating System" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+
+      <div class="menu-absolute new-menu-absolute">
+        <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+      </div>
+      <div class="navbartitle">Smart Rating System</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+    </div>
+    <div ng-controller="HeaderIconCtrl">
+        <div class="inbox" ng-show="showMessageIcon">
+        <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+        <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+      </div>
+      <div class="profileicon" ng-show="showMessageIcon">
+        <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+      </div>
+    </div>
+
+  </section>
+
+  <ion-content class="new-dashboar-color">
+
+    <div style="height: 40px;"></div>
+
+    <section alt="Log Book Inquiry Customer" ng-show="type == 'customer'">
+      <div class="card">
+         <div class = "item content-srs">
+
+          <h3>Log Book Inquiry Customer</h3>
+
+          <form name="form" novalidate class="reg-form">
+
+            <div id="selectNama" class="form-group thefirst-srs">
+              <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">No. Kontrak</span></label>
+              <input type="number" class="input form-control new-text-right new-borderbottom new-srs-form" placeholder="contoh: 5678912345" name="AgreementNo" ng-model="formData.AgreementNo" ng-change="getContractLink()">
+
+              <span ng-show="getContract" style="display:block;text-align:center;"><a class="button new-btn-submit-orange-1 new-btn-registered" ng-click="updateKontrak()" >check kontrak </a></span>
+            </div>
+
+            <div  id="selectNama" class="form-group ">
+              <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Nama</span></label>
+              <input type="text" class="input form-control new-text-right new-borderbottom new-srs-form" placeholder="contoh: Adi" disabled="true" name="CustomerName" ng-model="formData.CustomerName">
+            </div>
+
+            <div  id="selectNama" class="form-group ">
+              <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">No. Handphone</span></label>
+              <input type="text" class="input form-control new-text-right new-borderbottom new-srs-form" placeholder="contoh: 081122334455" disabled="true" name="MobileNo" ng-model="formData.MobileNo">
+            </div>
+
+            <div  id="selectNama" class="form-group ">
+              <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Email</span></label>
+              <input type="email" class="input form-control new-text-right new-borderbottom new-srs-form" placeholder="contoh: adi@gmail.com" disabled="true" name="Email" ng-model="formData.Email">
+            </div>
+
+            <div class="form-group ">
+
+              <label style="display:block;" class="required item item-input new-item">
+                  <span class="titletextinput-srs-1">Status</span>
+              </label>
+              <div class="item-select-container">
+                <select class="item-select-self form-control input-contract" name="Status" disabled="true" ng-model="formData.Status" ng-options="x for x in dataStatus">
+                    <option ng-selected="statusDefault" value="">-- Pilih Salah Satu --</option>
+                </select>
+                <span></span>
+              </div>
+            </div>
+
+            <div class="form-group ">
+              <label class="item item-input item-select new-item-select-cst required form-contact new-item" ng-hide="loadingTujuan">
+                <span class="titletextinput-srs smallform-contact">Tujuan</span>
+              `
+                <select class="input-contract new-borderbottom padtop30" ng-disabled="disabledSelect" ng-change="updateDataKategori()" name="Tujuan" ng-model="formData.Tujuan" ng-options="x as x.Text for x in dataTujuan">
+                  <option value="">-- Pilih Salah Satu --</option>
+                </select>
+              </label>
+
+              <label class="item item-input form-contact new-item" ng-show="loadingTujuan">
+                <span class="titletextinput-srs smallform-contact">Kategori</span>
+                <center>mengambil Tujuan.. <ion-spinner icon="android"></ion-spinner></center>
+              </label>
+            </div>
+
+            <div class="form-group ">
+              <label class="item item-input item-select new-item-select-cst required form-contact new-item" ng-hide="loadingCategory">
+                <span class="titletextinput-srs smallform-contact">Kategori</span>
+
+                <select class="input-contract new-borderbottom padtop30" ng-disabled="disabledSelect" ng-change="updateDataPenjelasan()" name="Kategori" ng-model="formData.Kategori" ng-options="x as x.Text for x in dataKategori">
+                  <option value="">-- Pilih Salah Satu --</option>
+                </select>
+              </label>
+              <label class="item item-input form-contact new-item" ng-show="loadingCategory">
+                <span class="titletextinput-srs smallform-contact">Kategori</span>
+                <center>mengambil kategori.. <ion-spinner icon="android"></ion-spinner></center>
+              </label>
+
+            </div>
+
+            <div class="form-group ">
+              <label class="item item-input item-select new-item-select-cst required form-contact new-item" ng-hide="loadingPenjelasan">
+                <span class="titletextinput-srs smallform-contact">Penjelasan</span>
+
+                <select class="input-contract new-borderbottom padtop30" name="Penjelasan" ng-model="formData.Penjelasan" ng-options="x as x.Text for x in dataPenjelasan">
+                  <option value="">-- Pilih Salah Satu --</option>
+                </select>
+              </label>
+
+              <label class="item item-input form-contact new-item" ng-show="loadingPenjelasan">
+                <span class="titletextinput-srs smallform-contact">Penjelasan</span>
+                <center>mengambil penjelasan.. <ion-spinner icon="android"></ion-spinner></center>
+              </label>
+            </div>
+
+          </form>
+
+          <div class="clearfix"></div>
+
+          <div class="text-center">
+            <button type="submit" class="button new-btn-submit-orange-1 new-btn-registered" ng-click="startSRS()">Selanjutnya </button>
+          </div>
+
+         </div>
+      </div>
+    </section>
+
+    <section alt="Log Book Inquiry Non Customer" ng-show="type == 'noncustomer'">
+      <div class="card">
+         <div class = "item content-srs">
+
+          <h3>Log Book Inquiry Non Customer</h3>
+
+          <form>
+
+            <div  id="selectNama" class="form-group ">
+              <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Nama</span></label>
+              <input type="text" class="input form-control new-text-right new-borderbottom new-srs-form" placeholder="contoh: Adi" ng-model="formData.CustomerName">
+            </div>
+
+            <div  id="selectNama" class="form-group ">
+              <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">No. Handphone</span></label>
+              <input type="number" ng-blur="doLoadHandphone(formData.MobileNo)" class="input form-control new-text-right new-borderbottom new-srs-form" placeholder="contoh: 6281122334455" ng-model="formData.MobileNo">
+            </div>
+
+            <div  id="selectNama" class="form-group ">
+              <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Email</span></label>
+              <input type="email" class="input form-control new-text-right new-borderbottom new-srs-form" placeholder="contoh: adi@gmail.com" ng-model="formData.Email">
+            </div>
+						<div class="form-group ">
+              <label class="item item-input item-select new-item-select-cst required form-contact new-item">
+                <span class="titletextinput-srs smallform-contact">Unit</span>
+
+                <select class="input-contract new-borderbottom padtop30" ng-change="updateDataKategori()" name="Unit" ng-model="formData.Unit">
+									<option value="">-- Pilih Salah Satu --</option>
+									<option value="Mobil">Mobil</option>
+									<option value="Motor">Motor</option>
+                </select>
+              </label>
+            </div>
+
+            <div  id="selectNama" class="form-group ">
+              <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Alamat</span></label>
+              <textarea class="input form-control new-text-right new-textarea" placeholder="contoh: Jl.Bungur Raya ..." name="Alamat" id="Alamat" rows="5" ng-model="formData.Alamat"></textarea>
+            </div>
+
+            <div class="form-group ">
+
+              <label style="display:block;" class="required item item-input new-item" ng-hide="loadingTujuan">
+                <span class="titletextinput-srs-1">Status</span>
+                <div class="item-select-container">
+                  <select class="item-select-self form-control input-contract" name="Status" disabled="true" ng-model="formData.Status" ng-options="x for x in dataStatus">
+                      <option ng-selected="statusDefault" value="">-- Pilih Salah Satu --</option>
+                  </select>
+                  <span></span>
+                </div>
+              </label>
+              <label class="item item-input form-contact new-item" ng-show="loadingTujuan">
+                <span class="titletextinput-srs smallform-contact">Kategori</span>
+                <center>mengambil Tujuan.. <ion-spinner icon="android"></ion-spinner></center>
+              </label>
+            </div>
+
+            <div class="form-group ">
+              <label class="item item-input item-select new-item-select-cst required form-contact new-item">
+                <span class="titletextinput-srs smallform-contact">Tujuan</span>
+
+                <select class="input-contract new-borderbottom padtop30" ng-change="updateDataKategori()" name="Tujuan" ng-model="formData.Tujuan" ng-options="x as x.Text for x in dataTujuan">
+                  <option value="">-- Pilih Salah Satu --</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form-group ">
+              <label class="item item-input item-select new-item-select-cst required form-contact new-item" ng-hide="loadingCategory">
+                <span class="titletextinput-srs smallform-contact">Kategori</span>
+
+                <select class="input-contract new-borderbottom padtop30" ng-change="updateDataPenjelasan()" name="Kategori" ng-model="formData.Kategori" ng-options="x as x.Text for x in dataKategori">
+                  <option value="">-- Pilih Salah Satu --</option>
+                </select>
+
+              </label>
+
+              <label class="item item-input form-contact new-item" ng-show="loadingCategory">
+                <span class="titletextinput-srs smallform-contact">Kategori</span>
+                <center>mengambil kategori.. <ion-spinner icon="android"></ion-spinner></center>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="item item-input item-select new-item-select-cst required form-contact new-item" ng-hide="loadingPenjelasan">
+                <span class="titletextinput-srs smallform-contact">Penjelasan</span>
+
+                <select class="input-contract new-borderbottom padtop30" name="Penjelasan" ng-model="formData.Penjelasan" ng-options="x as x.Text for x in dataPenjelasan">
+                  <option value="">-- Pilih Salah Satu --</option>
+                </select>
+              </label>
+
+              <label class="item item-input form-contact new-item" ng-show="loadingPenjelasan">
+                <span class="titletextinput-srs smallform-contact">Penjelasan</span>
+                <center>mengambil penjelasan.. <ion-spinner icon="android"></ion-spinner></center>
+              </label>
+            </div>
+
+          </form>
+
+          <div class="clearfix"></div>
+
+          <div class="text-center">
+            <button type="submit" class="button new-btn-submit-orange-1 new-btn-registered" ng-click="startSRS()">Selanjutnya </button>
+          </div>
+
+         </div>
+      </div>
+    </section>
+
+    <div style="height: 49px; width: 100%;"></div>
+
+  </ion-content>
+
+  <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

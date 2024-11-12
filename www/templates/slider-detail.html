@@ -1,0 +1,83 @@
+<ion-view view-title="Informasi" hide-nav-bar="true">
+	<ion-content class="new-color-back">
+    <!--HEADER -->
+    	<!-- <section class="bar-home-wrap" ng-controller="MenuCtrl"> -->
+        <section class="bar-home-wrap">
+				<div class="menu-absolute">
+					<button menu-toggle="left"><span class="icon-menu"></span></button>
+				</div>
+				<div class="logo-home"></div>
+				<div class="new-notif" ng-controller="SignalMeter">
+					<div class="new-notif-green {{indikator_green}}"></div>
+					<div class="new-notif-orange {{indikator_orange}}"></div>
+					<div class="new-notif-red {{indikator_red}}"></div>
+        </div>
+        <div ng-controller="HeaderIconCtrl">
+            <div class="inbox" ng-show="showMessageIcon">
+            <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+            <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+          </div>
+          <div class="profileicon" ng-show="showMessageIcon">
+            <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+          </div>
+        </div>
+			</section>
+	
+			<!-- SLIDER -->
+        <!-- <h1>DETAIL PROMO</h1> -->
+      <div class="header-promo-detail">
+        <img ng-src="{{imageSlider}}" class="img-responsive" on-error-src="assets/img/default-image.png">
+      </div>
+      <div class="title-promo-detail" style="padding:20px;">
+        <h2 class="font-proxima-bold">{{nameSlider}}</h2>
+        <h6 class="font-proxima-regular">{{dateSlider}}</h6>
+        <div class="font-proxima-regular" ng-bind-html="descSlider"></div>
+      </div>
+      <div class="share-promo-detail">
+        <p class="font-proxima-regular">SHARE</p>
+				<div class="col" ng-repeat="socialList in social.listSocial">
+					<button class="button button-positive button-block" ng-click="sharingFacebook('{{socialList.sharingMessage}}','{{socialList.sharingLink}}')">
+						<i class="icon ion-social-facebook">&nbsp;</i> <span class="font-proxima-regular">Facebook</span>
+					</button>
+				</div>
+				<div class="col" ng-repeat="socialList in social.listSocial">
+					<button class="button button-block button-calm" ng-click="sharingTwitter('{{socialList.sharingMessage}}','{{socialList.sharingImage}}','{{socialList.sharingLink}}')">
+						<i class="icon ion-social-twitter">&nbsp;</i> <span class="font-proxima-regular">Twitter</span>
+					</button>
+				</div>
+			</div>
+			<div style="height: 49px; width: 100%;"></div>
+    </ion-content>
+    <!-- FOOTER HIDDEN -->
+        <ion-footer-bar class="hide-on-keyboard-open">
+            <div ng-controller="footerCtrl" class="tabs tabs-icon-top">
+                <a ng-click="doAuth()" class="tab-item" tour-step="6" tour-on-start="onStart" tour-on-leave="onLeave"> <!--href="#/customer/home" -->
+                <!-- <i class="icon ion-home"></i>
+                Home -->
+                <img src="assets/img/new-home.svg" class="new-icon-image">
+                </a>
+                <a href="#/app/simulasikredit/5000000" class="tab-item" tour-step="7" tour-on-start="onStart" tour-on-leave="onLeave">
+                <!-- <i class="icon ion-ios-calculator"></i>
+                Simulasi -->
+                <img src="assets/img/new-simulation.svg" class="new-icon-image">
+                </a>
+                <a ng-click="doShare()" class="tab-item" tour-step="8" tour-step="8" tour-on-start="onStart" tour-on-leave="onLeave">
+                <!-- <i class="icon ion-android-share-alt"></i>
+                Bagikan Aplikasi -->
+                <img src="assets/img/new-share-socmed.svg" class="new-icon-image">
+                </a>
+                <a href="#/app/signin" class="tab-item {{belumLogin}}" tour-step="9" tour-on-start="onStart" tour-on-leave="onLeave">
+                <!-- <i class="icon ion-log-in"></i>
+                Sign In -->
+                <img src="assets/img/new-signin.svg" class="new-icon-image">
+                </a>
+                <a ng-click="doLogout()" class="tab-item {{sudahLogin}}">
+                <!-- <i class="icon ion-log-in"></i>
+                Sign Out -->
+                <img src="assets/img/new-signup.svg" class="new-icon-image">
+                </a>
+            </div>
+    </ion-footer-bar>
+    <!-- FOOTER HIDDEN -->  
+    </ion-view>
+      

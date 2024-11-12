@@ -1,0 +1,77 @@
+<ion-view view-title="Survey Exit Customer" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+      <div class="menu-absolute new-menu-absolute">
+        <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+      </div>
+      <div class="navbartitle">Survey Exit Customer</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+    </div>
+    <div ng-controller="HeaderIconCtrl">
+        <div class="inbox" ng-show="showMessageIcon">
+        <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+        <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+      </div>
+      <div class="profileicon" ng-show="showMessageIcon">
+        <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+      </div>
+    </div>
+
+  </section>
+
+    <div class="topsec backgreen">
+      <div class="text-center">
+        Data Survey Exit Customer
+      </div>
+    </div>
+
+  <ion-content class="new-dashboar-color">
+
+    <div style="height: 75px;"></div>
+
+    <section>
+      <div class="card">
+        <div class = "item content-srs text-center">
+
+          <form>
+
+            <div  id="selectNama" class="form-group ">
+              <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Nama  </span></label>
+              <input type="text" disabled="disabled" class="input form-control new-text-right new-borderbottom new-srs-form" name="customerName" id="customerName" ng-model="formData.customerName" placeholder="contoh: Adi">
+            </div>
+            
+            <div  id="selectNama" class="form-group ">
+              <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">No. Kontrak </span></label>
+              <input type="text" disabled="disabled" class="input form-control new-text-right new-borderbottom new-srs-form" name="ContractNo" id="ContractNo" ng-model="formData.agreementNo" placeholder="contoh: 7696798775">
+            </div>
+
+            <div  id="selectNama" class="form-group ">
+              <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">No. Handphone </span></label>
+              <input type="text" disabled="disabled" class="input form-control new-text-right new-borderbottom new-srs-form" name="mobileNo" id="mobileNo" ng-model="formData.mobileNo" placeholder="contoh: 081122334455">
+            </div>
+
+            <div  id="selectNama" class="form-group ">
+              <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Email </span></label>
+              <input type="email" disabled="disabled" class="input form-control new-text-right new-borderbottom new-srs-form" name="email" id="email" ng-model="formData.email" placeholder="contoh: adi@gmail.com">
+            </div>
+
+          </form>
+
+          <div class="text-center btn-sec">
+            <button type="submit" class="button new-btn-submit-orange-1 new-btn-registered" ng-click="doNext()"> Input SEC</button>
+            <button type="submit" class="button new-btn-submit-red-1 new-btn-registered" ng-click="showPopup()"> Konsumen tidak ingin disurvey</button>
+          </div>
+
+      </div>
+    </section>
+
+    <div style="height: 49px; width: 100%;"></div>
+
+  </ion-content>
+
+  <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

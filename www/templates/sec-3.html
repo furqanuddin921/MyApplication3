@@ -1,0 +1,82 @@
+<ion-view view-title="Survey Exit Customer" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+      <div class="menu-absolute new-menu-absolute">
+        <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+      </div>
+      <div class="navbartitle">Survey Exit Customer</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+    </div>
+    <div ng-controller="HeaderIconCtrl">
+        <div class="inbox" ng-show="showMessageIcon">
+        <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+        <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+      </div>
+      <div class="profileicon" ng-show="showMessageIcon">
+        <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+      </div>
+    </div>
+
+  </section>
+
+    <div class="topsec backgreen">
+      <div class="text-center">
+        Kuesioner SEC
+      </div>
+    </div>
+
+  <ion-content class="new-dashboar-color">
+
+    <div style="height: 75px;"></div>
+
+    <section>
+      <div class="card">
+        <div class = "item content-srs text-center">
+
+          <form>
+
+            <div class="form-group ">
+              <label class="item item-input item-select new-item-select-cst required form-contact new-item">
+                <span class="titletextinput-srs-1 smallform-contact">Status</span>
+              `
+                <select class="input-contract new-borderbottom padtop30" name="Status" ng-model="formData.Status" ng-change="doFillStatus(formData.Status)">
+                  <option value="">-- Pilih Salah Satu --</option>
+                  <option value="SEC"> SEC </option>
+                  <option value="RO"> RO </option>
+                  <option value="Other"> BPKB Diambil Oleh Selain Konsumen atau Pasangan </option>
+                </select>
+              </label>
+            </div>
+
+            <!-- <div class="form-group ">
+              <label class="item item-input item-select new-item-select-cst required form-contact new-item">
+                <span class="titletextinput-srs-1 smallform-contact">{{question}}</span>
+                <select class="input-contract new-borderbottom padtop30" name="Status" ng-model="formData.Status" ng-options="x as x.Text for x in dataStatus" ng-change="doFillStatus(formData.Status)">
+                  <option value="">-- Pilih Salah Satu --</option>
+                </select>
+              </label>
+            </div> 
+            <div class="form-group ">
+              <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Siapa pihak lain yang ditunjuk ? </span></label>
+              <input type="text" class="input form-control new-text-right new-borderbottom new-srs-form" name="namaPengambil" id="namaPengambil" ng-model="formData.namaPengambil" ng-disabled="pengambil" placeholder="contoh: Rudy">
+            </div> -->
+
+          </form>
+
+          <div class="text-center btn-sec">
+            <button type="submit" class="button new-btn-submit-orange-1 new-btn-registered" ng-click="doNext()"> Selanjutnya</button>
+          </div>
+
+      </div>
+    </section>
+
+    <div style="height: 49px; width: 100%;"></div>
+
+  </ion-content>
+    
+  <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

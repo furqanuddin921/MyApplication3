@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-firebase-crashlytics",
+        "scope": null,
+        "escapedName": "cordova-plugin-firebase-crashlytics",
+        "name": "cordova-plugin-firebase-crashlytics",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\IONIC\\BFI\\bfi-srs-app - with-firebase-analytic"
+    ]
+  ],
+  "_from": "cordova-plugin-firebase-crashlytics@latest",
+  "_id": "cordova-plugin-firebase-crashlytics@0.0.6",
+  "_inCache": true,
+  "_location": "/cordova-plugin-firebase-crashlytics",
+  "_nodeVersion": "6.10.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-firebase-crashlytics_0.0.6_1521393439567_0.6407019004030312"
+  },
+  "_npmUser": {
+    "name": "reallysmallsoftware",
+    "email": "richard.windley@gmail.com"
+  },
+  "_npmVersion": "5.6.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-firebase-crashlytics",
+    "scope": null,
+    "escapedName": "cordova-plugin-firebase-crashlytics",
+    "name": "cordova-plugin-firebase-crashlytics",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-firebase-crashlytics/-/cordova-plugin-firebase-crashlytics-0.0.6.tgz",
+  "_shasum": "03db4a353a21d28a8d13eb6e7e0f0415fc26d1d9",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-firebase-crashlytics",
+  "_where": "D:\\IONIC\\BFI\\bfi-srs-app - with-firebase-analytic",
+  "author": {
+    "name": "Richard Windley",
+    "email": "richard.windley@gmail.com",
+    "url": "http://www.reallysmall.co.uk"
+  },
+  "bugs": {
+    "url": "https://github.com/ReallySmallSoftware/cordova-plugin-firebase-crashlytics/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-firebase-crashlytics",
+    "platforms": [
+      "android",
+      "ios",
+      "browser"
+    ]
+  },
+  "dependencies": {
+    "xcode": "^1.0.0"
+  },
+  "description": "A Google Firebase Crashlytics plugin",
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0",
+    "jshint-junit-reporter": "^0.2.3"
+  },
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-8T9sjsEP8SOFD2YpA16spVdTXBkUJx05/9gzgBKmncds9hd8DctyPAqcmjhZOUW8E2jq5H748446l5j5BOZVvA==",
+    "shasum": "03db4a353a21d28a8d13eb6e7e0f0415fc26d1d9",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-firebase-crashlytics/-/cordova-plugin-firebase-crashlytics-0.0.6.tgz",
+    "fileCount": 28,
+    "unpackedSize": 36264
+  },
+  "gitHead": "da991ae2947997619e4517e933ea6a577a8e003c",
+  "homepage": "https://github.com/ReallySmallSoftware/cordova-plugin-firebase-crashlytics",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "Apache-2.0",
+  "maintainers": [
+    {
+      "name": "reallysmallsoftware",
+      "email": "richard.windley@gmail.com"
+    }
+  ],
+  "name": "cordova-plugin-firebase-crashlytics",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReallySmallSoftware/cordova-plugin-firebase-crashlytics.git"
+  },
+  "version": "0.0.6"
+}

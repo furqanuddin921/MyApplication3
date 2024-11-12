@@ -1,0 +1,64 @@
+<ion-view view-title="Detail Promo" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+  
+      <div class="menu-absolute new-menu-absolute">
+        <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+      </div>
+      <div class="navbartitle">Detail Berita & Promo</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+      </div>
+      <div ng-controller="HeaderIconCtrl">
+          <div class="inbox" ng-show="showMessageIcon">
+          <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+          <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+        </div>
+        <div class="profileicon" ng-show="showMessageIcon">
+          <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+        </div>
+      </div>
+
+  </section>
+
+  <ion-content class="backgraybody"> 
+
+    <div style="height: 44px;"></div>
+
+    <section>
+      <div class="card">
+         <div class = "item content-promo">
+            <img ng-src="{{imagePromo}}" class="img-responsive"  on-error-src="assets/img/default-image.png" >
+         </div>
+         <div class = "item item-body content-promo-1">
+            <a ng-href="{{urlPromoDetail}}">
+              <h1>{{namePromo}}</h1>
+              <h6>{{datePromo}}</h6>
+              <p ng-bind-html="descPromo"></p>
+            </a>
+         </div>
+      </div>
+    </section>
+    
+    <!-- <div class="share-promo-detail">
+      <p class="font-proxima-regular">SHARE</p>
+      <div class="row no-padding no-margin">
+            <div class="col" ng-repeat="socialList in social.listSocial">
+            <button class="button button-positive topbot50 button-block borderradius20" ng-click="sharingFacebook('{{socialList.sharingMessage}}','{{socialList.sharingLink}}')">
+              <i class="icon ion-social-facebook">&nbsp;</i> <span class="font-proxima-regular">Facebook</span>
+            </button></div>
+          <div class="col" ng-repeat="socialList in social.listSocial">
+            <button class="button button-block topbot50 button-calm borderradius20" ng-click="sharingTwitter('{{socialList.sharingMessage}}','{{socialList.sharingImage}}','{{socialList.sharingLink}}')">
+              <i class="icon ion-social-twitter">&nbsp;</i> <span class="font-proxima-regular">Twitter</span>
+            </button></div>
+            </div>
+    </div> -->
+
+    <div style="height: 49px; width: 100%;"></div>
+
+  </ion-content>
+
+  <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

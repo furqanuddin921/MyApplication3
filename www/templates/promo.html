@@ -1,0 +1,52 @@
+<ion-view view-title="Berita & Promo" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+      <div class="menu-absolute">
+        <button menu-toggle="left"><span class="icon-menu"></span></button>
+      </div>
+      <div class="navbartitle">Berita & Promo</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+      </div>
+      <div ng-controller="HeaderIconCtrl">
+          <div class="inbox" ng-show="showMessageIcon">
+          <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+          <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+        </div>
+        <div class="profileicon" ng-show="showMessageIcon">
+          <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+        </div>
+      </div>
+
+  </section>
+
+  <ion-content class="backgraybody">  
+
+    <div style="height: 40px;"></div>
+
+    <section>
+      <div class="container containerss">
+        <div class="card col-xs-12 col-sm-6" ng-repeat="promolist in event.listpromo">
+           <div class = "item content-asuransi">
+              <img ng-src="{{promolist.imageName}}" class="img-responsive" loading-src="assets/img/loading.gif" on-error-src="assets/img/default-image.png">
+           </div>
+           <div class = "item item-body content-asuransi-1" ng-click="doPenutupan()">
+              <a ui-sref="{{urlPromoDetail}}">
+                <p class="fortitlepromo">{{promolist.name}}</p>
+                <p class="forsecondtitlepromo">Selengkapnya</p>
+                <div class="iconrightcevron"><i class="icon ion-chevron-right" style="margin-left: 5px;"></i></div>
+              </a>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="height: 49px; width: 100%;"></div>
+
+  </ion-content>
+
+  <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

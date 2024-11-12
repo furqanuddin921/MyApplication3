@@ -1,0 +1,412 @@
+<ion-view view-title="Survey Exit Customer" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+      <div class="menu-absolute new-menu-absolute">
+        <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+      </div>
+      <div class="navbartitle">Survey Exit Customer</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+    </div>
+
+  </section>
+
+    <div class="topsec backgreen">
+      <div class="text-center">
+        Kuesioner SEC
+      </div>
+    </div>
+
+  <ion-content class="new-dashboar-color">
+
+    <div style="height: 75px;"></div>
+
+    <section>
+      <div class="card">
+        <div class = "item content-sec-4 no-padding padtop15">
+          <br>
+          <form>
+
+            <div class="form-group ">
+              <div class="row title-sec no-margin0">
+                <div class="col-xs-1">1.</div>
+                <div class="col-xs-11"><h2>Siapakah yang melakukan pengambilan asset dokumen (BPKB)</h2></div>
+              </div>
+              <div class="row martop5">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-11">
+
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio" ng-model="data.question1"> <span class="label-text titletextinput-sec-1">Konsumen Sendiri / Pasangan</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio" ng-model="data.question1"> <span class="label-text titletextinput-sec-1">Keluarga Konsumen</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio" ng-model="data.question1"> <span class="label-text titletextinput-sec-1">Pihak lain yang ditunjuk (siapa?)</span>
+                    </label>
+                  </div>
+                  <div class="inli">
+                    <div class="form-check">
+                      <label>
+                        <input type="text titletextinput-sec-1 simulasi-input" style="border-bottom: 1px solid #ccc !important;border: none;">
+                      </label>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+          <form>
+            
+            <div class="form-group ">
+              <div class="row title-sec no-margin0">
+                <div class="col-xs-1">2.</div>
+                <div class="col-xs-11"><h2>Sebelumnya apakah Bapak / Ibu sudah pernah mendapatkan penawaran untuk pembiayaan kembali di BFI Finance ?</h2></div>
+              </div>
+              <div class="row martop5">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-11">
+
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Pernah (Melalui apa?)</span>
+                    </label>
+                  </div>
+                      <div class="inli">
+                        <div class="form-check">
+                          <label>
+                            <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Surat</span>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <label>
+                            <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Telepon</span>
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <label>
+                            <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Kunjungan</span>
+                          </label>
+                        </div>
+                      </div>
+
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Tidak Pernah</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+          <form>
+
+            <div class="form-group ">
+              <div class="row title-sec no-margin0">
+                <div class="col-xs-1">3.</div>
+                <div class="col-xs-11"><h2>Apakah alasan Bapak / Ibu tidak mengambil pembiayaan kembali di BFI ?</h2></div>
+              </div>
+              <div class="row martop5">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-11">
+
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Mempunyai dana lebih</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Unit akan dijual / diganti unit baru</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Alih kontrak tidak resmi</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Ditolak pihak BFI ( Reject )</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Tidak mencapai kesepakatan ( Loss Deal )</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Lainnya (Sebutkan ?)</span>
+                    </label>
+                  </div>
+                    <div class="inli">
+                      <div class="form-check">
+                        <label>
+                          <input type="text titletextinput-sec-1 simulasi-input" style="border-bottom: 1px solid #ccc !important;border: none;">
+                        </label>
+                      </div>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+          <form>
+
+            <div class="form-group ">
+              <div class="row title-sec no-margin0">
+                <div class="col-xs-1">4.</div>
+                <div class="col-xs-11"><h2>Hal apakah yang menjadi pertimbangan Bapak / Ibu dalam memilih perusahaan pembiayaan ?</h2></div>
+              </div>
+              <div class="row martop5">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-11">
+
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Image perusahaan yang baik</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Bunga yang kooperatif</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Hadiah yang ditawarkan menarik</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Proses pembiayaan yang mudah dan cepat</span>
+                    </label>
+                  </div>
+                    <div class="inli">
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">1-2 Hari</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">3-4 Hari</span>
+                        </label>
+                      </div>
+                    </div>
+
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Adanya referensi dari teman</span>
+                    </label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+          <form>
+
+            <div class="form-group ">
+              <div class="row title-sec no-margin0">
+                <div class="col-xs-1">5.</div>
+                <div class="col-xs-11"><h2>Apakah Bapak / Ibu saat ini sedang melakukan pembiayaan di tempat lain ?</h2></div>
+              </div>
+              <div class="row martop5">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-11">
+
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Ya</span>
+                    </label>
+                  </div>
+                    <div class="inli">
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Adira</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">ACC</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">BCA Finance</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">BII Finance</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">CIMB Niaga Finance</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">FIF</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">WOM</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">OTO</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">BAF</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Toyota Astra Finance</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Koperasi</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Bank</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">BPR</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">AEON</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Indomobil Finance</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Lainnya (Apa ?)</span>
+                        </label>
+                      </div>
+                    </div>
+
+                  <h2 style="font-style: italic;margin: 10px 0px;">Untuk Pembiayaan ?</h2>
+
+                    <div class="inli">
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">KPR</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Elektronik</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Mobil / Motor</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Alat Berat / Mesin</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Sertifikat Rumah / Tanah</span>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label>
+                          <input type="radio" name="radio" > <span class="label-text titletextinput-sec-1">Lainnya (Apa ?)</span>
+                        </label>
+                      </div>
+                    </div>
+
+                  <div class="form-check">
+                    <label>
+                      <input type="radio" name="radio"> <span class="label-text titletextinput-sec-1">Tidak</span>
+                    </label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+          <div class="text-center btn-sec-4">
+            <button type="submit" class="button new-btn-submit-orange-1 new-btn-registered" ng-click="doNext()"> Selanjutnya</button>
+          </div>
+
+      </div>
+    </section>
+
+    <div style="height: 49px; width: 100%;"></div>
+
+  </ion-content>
+
+  <div class="new-alert {{showkoneksi}}" ng-show="koneksiInternet">
+    <div class="col-xs-8 HelveticaNeue-Thin font12">
+      Koneksi Internet Terputus, Cek Koneksi Internet!
+    </div>
+    <div class="col-xs-4 HelveticaNeue-Thin new-fontorange-alert" ng-click="tryAgain()">
+      COBA LAGI
+    </div>
+  </div> 
+  
+  <!-- FOOTER HIDDEN -->
+   <ion-footer-bar class="hide-on-keyboard-open">
+        <div ng-controller="footerCtrl" class="tabs tabs-icon-top">
+            <a href="#/app/" class="tab-item {{belumLogin}}" tour-step="9" tour-on-start="onStart" tour-on-leave="onLeave">
+              <img src="assets/img/new-home.svg" class="new-icon-image">
+            </a>
+            <a href="#/app/simulasikredit/5000000" class="tab-item" tour-step="7" tour-on-start="onStart" tour-on-leave="onLeave">
+              <img src="assets/img/new-simulation.svg" class="new-icon-image">
+            </a>
+            <a ng-click="doShare()" class="tab-item" tour-step="8" tour-step="8" tour-on-start="onStart" tour-on-leave="onLeave">
+              <img src="assets/img/new-share-socmed.svg" class="new-icon-image">
+            </a>
+            <a href="#/app/login" class="tab-item {{belumLogin}}" tour-step="9" tour-on-start="onStart" tour-on-leave="onLeave">
+              <img src="assets/img/new-signin.svg" class="new-icon-image">
+            </a>
+            <a ng-click="doLogout()" class="tab-item {{sudahLogin}}">
+              <img src="assets/img/new-signup.svg" class="new-icon-image">
+            </a>
+        </div>
+  </ion-footer-bar>
+  <!-- FOOTER HIDDEN -->
+</ion-view>

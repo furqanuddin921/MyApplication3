@@ -1,0 +1,181 @@
+<ion-view view-title="Simulasi Kredit" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+      <div class="menu-absolute">
+        <button menu-toggle="left"><span class="icon-menu"></span></button>
+      </div>
+      <div class="navbartitle">Simulasi Kredit</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+      </div>
+      <div ng-controller="HeaderIconCtrl">
+          <div class="inbox" ng-show="showMessageIcon">
+          <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+          <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+        </div>
+        <div class="profileicon" ng-show="showMessageIcon">
+          <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+        </div>
+      </div>
+
+  </section>
+
+  <ion-content style="background-color: #fff;">
+
+    <div style="margin-top: 44px !important;">
+      <ion-slide-box show-pager="false" ion-slide-tabs>
+        <ion-slide ion-slide-tab-label="Kredit Dengan Agunan" ng-click="doKreditAgunanVal()">
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-cal">
+            <form ng-submit="doAjuanAgunan()" class="calculator" style="padding-top: 10px;">
+              
+              <div class="form-group {{element_selectAgunan}}" id="selectAgunan">
+                <label class="item item-input item-select new-item-select-cst required form-contact new-item">
+                  <span class="smallform-contact">Agunan <span color="red">*</span> <span class="new-selected-text-kid">( Pilih Salah Satu )</span></span>
+                `
+                  <select ng-model="form.agunanAjuan" ng-change="doLoadAgunan(form.agunanAjuan)" class="input-contract new-borderbottom padtop30">
+                    <option value="">-- Pilih Agunan --</option>
+                    <option ng-repeat="agunan in agunanList" value="{{agunan.name}}">{{agunan.name}}</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="form-group {{element_kondisi}}" id="selectKondisi">
+                <label class="item item-input item-select new-item-select-cst required form-contact new-item">
+                  <span class="smallform-contact">Kondisi <span color="red">*</span> <span class="new-selected-text-kid">( Pilih Salah Satu )</span></span>
+                `
+                  <select ng-model="form.kondisiAjuan" ng-options="kondisi.category for kondisi in kondisiList" ng-change="doLoadKondisiAjuan(form.kondisiAjuan)" class="input-contract new-borderbottom padtop30">
+                  </select>
+                </label>
+              </div>
+
+              <div  id="selectPembiayaan" class="form-group ">
+                <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Harga Unit <span color="red">*</span></span></label>
+                <input type="text" class="input form-control new-text-right new-borderbottom" name="nilaiAjuan" id="nilaiAjuan" ng-model="form.nilaiAjuan" placeholder="contoh: 10000000"  ng-blur="doBlur(form.nilaiAjuan);doBlurPinjaman(form.nilaiAjuan)" ui-number-mask=0>
+              
+              </div>
+
+              <div  id="selectPembiayaan" class="form-group {{element_deposit}}">
+                <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Security Deposit <span color="red">*</span></span></label>
+                <input type="text" class="input form-control new-text-right new-borderbottom" name="securityDeposit" id="securityDeposit" ng-model="form.securityDeposit" placeholder="Security Deposit" ui-number-mask=0 disabled>
+              </div>
+
+              <div  id="selectTahun" class="form-group {{element_tahun}}">
+                <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">{{scopetahun}}<span color="red">*</span></span></label>
+                <input type="text" class="input form-control new-text-right new-borderbottom" name="tahunAjuan" id="tahunAjuan" placeholder="{{scopetahun}}" ng-model="form.tahunAjuan" ng-blur="doBlurTahun(form.tahunAjuan)">
+              </div>
+
+              <div class="form-group {{element_tahunkendaraan}}" id="selectTahunKendaraan">
+                <label class="item item-input item-select new-item-select-cst required form-contact new-item">
+                  <span class="smallform-contact">{{scopetahun}}<span color="red">*</span> <span class="new-selected-text-kid">( Pilih Salah Satu )</span></span>
+                `
+                  <select ng-model="form.tahunAjuan" ng-options="item.tahun for item in tahunList" ng-change="doBlurTahun(form.tahunAjuan)" class="input-contract new-borderbottom padtop30">
+                  </select>
+                </label>
+              </div>
+
+              <div class="container-info {{disclaimer_motor}} font-proxima-regular">
+                <p>
+                  Nilai Pinjaman dan Simulasi Angsuran di atas tidak mengikat dan bisa berubah sewaktu-waktu.
+                  Cukup lanjutkan proses pengisian data anda, maka Call Center kami akan segera menghubungi anda untuk memberikan perhitungan yang lebih akurat.
+                </p>
+              </div>
+              <div class="container-info {{disclaimer_car}} font-proxima-regular">
+                <p style="font-size:12px !important;">
+                  * Hasil perhitungan belum termasuk asuransi kendaraan dan asuransi jiwa.<br />
+                  ** Perhitungan pembiayaan hanyalah merupakan ilustrasi dan bukan merupakan penawaran dan/atau persetujuan.
+                </p>
+              </div>
+              <div class="container-info {{disclaimer_sertifikat}} font-proxima-regular">                        
+                <p>
+                Belum termasuk biaya-biaya yang dibebankan notaris & <span style="font-style:italic">appraiser</span>.                        
+                </p>
+              </div>
+              <div class="container-info {{disclaimer_heto}} font-proxima-regular">                        
+                <p>Pembiayaan kondisi baru untuk brand Jepang & Eropa DP minimum 20%.
+                  Pembiayaan kondisi used untuk brand Jepang & Eropa DP minimum 30%. 
+                  Kategori asset yang dapat dibiayai adalah Alat Berat, Forklift, dan Truck.
+                </p>
+              </div>
+              <div class="container-info {{disclaimer_machinery}} font-proxima-regular">
+                <ul style="list-style-type: square !important;">
+                  <li>Pembiayaan kondisi baru untuk brand Jepang & Eropa DP minimum 30%, untuk brand China & Lainnya minimum 40%</li>
+                  <li>Pembiayaan kondisi used untuk brand Jepang & Eropa DP minimum 40%</li>
+                  <li>Untuk industri percetakan dan manufaktur maksimum usia mesin 5 tahun, untuk industri lainnya usia mesin dalam kondisi baru</li>
+                </ul>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="button new-btn-submit-orange btn-register-text new-btn-registered font-proxima-regular" style="width: 70% !important;margin-top: 15px !important;"> Selanjutnya</button>
+              </div>
+
+              <div style="height:80px;"></div>
+
+            </form>
+
+            <div class="clearfix"></div>
+          </div>
+
+        </ion-slide>
+        <ion-slide ion-slide-tab-label="Kredit Kepemilikan" ng-click="doKreditMilik()">
+          
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-cal"> <!-- c-motor -->
+            <form ng-submit="doAjuanPemilikan()" class="motor" style="padding-top: 10px;">
+
+              <div  id="selectOTR" class="form-group">
+                <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Harga OTR</span></label>
+                <input type="text" class="input form-control new-text-right new-borderbottom" name="nilaiAjuanMilik" id="nilaiAjuanMilik" ng-model="form.nilaiAjuanMilik" placeholder="Harga OTR" ng-blur="doBlurPinjamaMilik(form.nilaiAjuanMilik)" ui-number-mask=0>
+              </div>
+
+              <div  id="selectDP" class="form-group">
+                <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">DP</span></label>
+                <input type="text" class="input form-control new-text-right new-borderbottom" name="dpAjuanMilik" id="dpAjuanMilik" ng-model="form.dpAjuanMilik" placeholder="Down Payment" ng-blur="doBlurDPMilik(form.dpAjuanMilik)" ui-number-mask=0>
+              </div>
+
+              <div class="form-group" id="selectTahun">
+                <label class="item item-input item-select new-item-select-cst required form-contact new-item">
+                  <span class="smallform-contact">Tahun Kendaraan<span color="red">*</span> <span class="new-selected-text-kid">( Pilih Salah Satu )</span></span>
+                `
+                  <select name="tahunAjuanMilik" id="tahunAjuanMilik" ng-options="year.tahun for year in tahunListMilik" ng-model="form.tahunAjuanMilik" ng-change="doTahunMilik(form.tahunAjuanMilik)" class="input-contract new-borderbottom padtop30">
+                  </select>
+                </label>
+              </div>
+
+              <div class="container-info">
+                <p class="font-proxima-regular">
+                  Perhitungan ini merupakan simulasi (belum termasuk asuransi kendaraan) dan dapat berubah sewaktu-waktu tanpa pemberitahuan.
+                </p>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="button new-btn-submit-orange btn-register-text new-btn-registered font-proxima-regular" style="width: 70% !important;margin-top: 15px !important;">Selanjutnya</button>
+              </div>
+
+              <div style="height:80px;"></div>
+
+            </form>
+
+            <div class="clearfix"></div>
+          </div>
+
+        </ion-slide>
+      </ion-slide-box>
+  </div>
+
+</ion-content>
+
+<div ng-include src="'templates/footer.html'"></div>
+</ion-view>
+
+
+<style>
+  .slidingTabs ul li {
+    padding: 29px 12px 0px 12px !important;
+  }
+  .slider-slide {
+    text-align: left;
+  }
+</style>

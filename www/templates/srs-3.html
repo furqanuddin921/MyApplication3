@@ -1,0 +1,61 @@
+<ion-view view-title="Smart Rating System" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+      <div class="menu-absolute new-menu-absolute">
+        <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+      </div>
+      <div class="navbartitle">Smart Rating System</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+    </div>
+    <div ng-controller="HeaderIconCtrl">
+        <div class="inbox" ng-show="showMessageIcon">
+        <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+        <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+      </div>
+      <div class="profileicon" ng-show="showMessageIcon">
+        <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+      </div>
+    </div>
+
+  </section>
+
+  <ion-content class="new-dashboar-color">
+
+    <div style="height: 40px;"></div>
+
+    <section>
+      <div class="card">
+        <div class = "item content-srs text-center">
+          
+          <div class="poinsrs">
+            <p>Berapa tingkat kepuasan Anda terhadap pelayanan kami</p>
+          </div>
+
+          <div class="selectpenilaian">
+            <img ng-src="{{image.puas}}" class="img-responsive" alt="" ng-click="activeRating('puas')">
+          </div>
+
+          <div class="selectpenilaian">
+            <img src="{{image.biasa}}" class="img-responsive" alt="" ng-click="activeRating('biasa')">
+          </div>
+
+          <div class="selectpenilaian">
+            <img src="{{image.tidak}}" class="img-responsive" alt="" ng-click="activeRating('tidak')">
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="button new-btn-submit-orange-1 new-btn-registered" ng-click="startSRS()"> Selanjutnya</button>
+          </div>
+      </div>
+    </section>
+
+    <div style="height: 49px; width: 100%;"></div>
+
+  </ion-content>
+
+  <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

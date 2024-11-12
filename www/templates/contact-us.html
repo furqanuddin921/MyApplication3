@@ -1,0 +1,123 @@
+<ion-view hide-nav-bar="true" view-title="Hubungi Kami">
+  <ion-content class="backgraybody">
+
+    <!--HEADER -->
+    <!-- <section class="bar-home-wrap" ng-controller="MenuCtrl"> -->
+    <section class="bar-home-wrap">
+      <div class="menu-absolute">
+        <button menu-toggle="left"><span class="icon-menu"></span></button>
+      </div>
+      <div class="navbartitle">Hubungi Kami</div>
+      <div class="logo-home"></div>
+      <div class="new-notif" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+      </div>
+      <div ng-controller="HeaderIconCtrl">
+          <div class="inbox" ng-show="showMessageIcon">
+          <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+          <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+        </div>
+        <div class="profileicon" ng-show="showMessageIcon">
+          <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="bg-ContactUs">
+        <img src="assets/img/contact-us.jpg" class="img-responsive">
+      </div>
+      <div class="intro-pesan">
+        <h5>Pelanggan Yang Terhormat,</h5>
+        <p>
+          Silahkan memberikan masukan dan saran agar pelayanan BFI semakin baik. Masukan dan saran Anda adalah hadiah untuk kami. Kami akan selalu berusaha memberikan pelayanan terbaik bagi Anda.
+        </p>
+      </div>
+
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-cal new-con-call">
+        <form >
+
+          <div class="form-group ">
+            <label class="item item-input item-select new-item-select-cst required form-contact new-item">
+              <span class="smallform-contact">Jenis Pesan <span color="red">*</span> <span class="new-selected-text-kid">( Pilih Salah Satu )</span></span>
+              `
+            <select class="input-contract new-borderbottom padtop30" ng-model="message.jenisPesan" ng-options="pesan.categoryInbox for pesan in pesanList" style="width: 100% !important;max-width: 100% !important;color: rgba(0,0,0,0.7) !important; padding-top: 20px;">
+              <!-- <option value="" selected="selected">-- Pilih Agunan --</option>
+              <option ng-repeat="agunan in agunanList" value="{{agunan.name}}">{{agunan.name}}</option> -->
+            </select>
+            </label>
+          </div>
+
+          <div class="form-group ">
+            <label class="item item-input item-select new-item-select-cst required form-contact new-item">
+              <span class="smallform-contact">Identitas <span color="red">*</span> <span class="new-selected-text-kid">( Pilih Salah Satu )</span></span>
+            `
+              <select ng-model="message.identitas" class="input-contract new-borderbottom padtop30">
+                <option value="">-- Pilih Identitas --</option>
+                <option value="Konsumen">Konsumen</option>
+                <option value="Non Konsumen">Non Konsumen</option>
+              </select>
+            </label>
+          </div>
+
+          <div  id="selectNama" class="form-group ">
+            <label class="item item-input item-select new-item-select-cst required form-contact new-item">
+                <span class="smallform-contact">Nomor Kontrak <span color="red">*</span> <span class="new-selected-text-kid">( Pilih Salah Satu )</span></span>
+                `
+              <select ng-model="message.noKontrak" ng-options="kontrak.AgreementNo for kontrak in kontrakList" class="input-contract new-borderbottom padtop30">
+                <!-- <option value="" selected="selected">-- Pilih Agunan --</option>
+                <option ng-repeat="agunan in agunanList" value="{{agunan.name}}">{{agunan.name}}</option> -->
+              </select>
+            </label>
+          </div>
+
+          <div  id="selectNama" class="form-group ">
+            <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Nama Pelanggan <span color="red">*</span></span></label>
+            <input type="text" class="input form-control new-text-right new-borderbottom" name="fullnamePelanggan" id="fullnamePelanggan" ng-model="message.fullnamePelanggan" placeholder="Nama Pelanggan" ng-pattern ="/^[a-zA-Z\s]*$/">
+          </div>
+
+          <div id="selectNama" class="form-group ">
+            <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Nama Pelapor <span color="red">*</span></span></label>
+            <input type="text" class="input form-control new-text-right new-borderbottom" name="fullnamePelapor" id="fullnamePelapor" ng-model="message.fullnamePelapor" placeholder="Nama Pelapor" ng-pattern ="/^[a-zA-Z\s]*$/">
+          </div>
+
+          <div id="selectHandphone" class="form-group ">
+            <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Nomor Handphone <span color="red">*</span></span></label>
+            <input type="tel" class="input form-control new-text-right new-borderbottom" name="handphone" id="handphone" ng-model="message.handphone" placeholder="08xxxxxxxxxx" ng-disabled="disabled_handphone" ng-blur="doLoadHandphone(message.handphone)">
+          </div>
+
+          <div id="selectEmail" class="form-group ">
+            <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Email <span color="red">*</span></span></label>
+            <input type="email" class="input form-control new-text-right new-borderbottom" name="email" id="email" ng-model="message.email" placeholder="johndoe@gmail.com" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/" ng-disabled="disabled_email">
+            <small class="error" ng-show="registerForm.email.$error.email" style="color: red;font-style: italic;" class="font-regular">Email Anda tidak valid.</small>
+          </div>
+
+          <div id="selectEmail" class="form-group ">
+            <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Pesan <span color="red">*</span></span></label>
+            <textarea class="input form-control new-text-right new-textarea" name="pesan" ng-model="message.pesan" id="pesan" rows="5" placeholder="Pesan Anda"></textarea>
+          </div>
+
+          <!-- <div id="selectHandphone" class="form-group" ng-show="imageAttach">
+            <label for="fullname" class="required"><span class="font-italic-proxima">Lampirkan Gambar</span></label>
+            <p ng-show="imageView" ng-bind-html="attachArea" style="height:300px !important; width:330px !important"></p>
+            <p ng-show="uploadImage" class="imgSource"><img src="{{imageSource}}" style="height:300px !important; width:330px !important" ></p>
+            <button ng-show="imageBtn" class="button new-btn-profile new-btn-submit-orange-100 new-btn-registered font-proxima-regular" style="width: 70% !important; padding-right: 35px !important; padding-left: 35px !important; margin: 10px 50px !important;" ng-click="OpenImageFile()"> Pilih Gambar </button>
+        </div> -->
+
+        <div class="text-center">
+
+          <button type="button" class="button new-btn-submit-orange new-btn-submit-orange-100 new-btn-registered font-proxima-regular" style="width: 70% !important; padding-right: 35px !important; padding-left: 35px !important; margin: 10px 50px !important;" ng-click="doPesanBaru()" > Kirim Pesan</button>
+          
+        </div>
+
+        <div style="height:80px;"></div>
+
+    </section>
+
+    <!-- <div style="height: 30px; width: 100%;"></div> -->
+  </ion-content>
+
+  <div ng-include src="'templates/footer.html'"></div>     
+</ion-view>

@@ -1,0 +1,49 @@
+<ion-view view-title="Masuk" hide-nav-bar="true">
+
+  <!-- <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl"> -->
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue">
+    <div class="menu-absolute">
+      <button menu-toggle="left"><span  class="icon-menu"></span></button>
+    </div>
+
+    <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+      <div class="new-notif-green {{indikator_green}}"></div>
+      <div class="new-notif-orange {{indikator_orange}}"></div>
+      <div class="new-notif-red {{indikator_red}}"></div>
+    </div>
+  </section>
+
+  <ion-content class="newloginbackground">
+
+    <div style="height: 40px;"></div>
+
+    <div class="padtop30">
+      <div class="text-center"><img class="logo-login new-logologin" src="assets/img/bfi-logo.svg"></div>
+    </div>
+
+    <div class="newbackwhite tab_loginbackwhite">
+      <form ng-submit="doLoginUsers()" method="POST">
+
+        <div class="input-group marbot10">
+          <span class="input-group-addon newaddon new-icon-login-amplop" id="sizing-addon2">
+          </span>
+          <input type="text" ng-model="login.email" class="form-control new-form-control foremaillogin" placeholder="User ID Anda" aria-describedby="sizing-addon2" style="padding-left: 10px !important; font-style: normal !important; padding-top: 5px;">
+        </div>
+
+        <div class="input-group marbot10">
+          <span class="input-group-addon newaddon new-icon-login-lock" id="sizing-addon2"></span>
+          <input type="{{input_type}}" ng-model="login.password" class="form-control new-form-control foremailpassword" placeholder="Password" aria-describedby="sizing-addon2" style="padding-top: 5px;"><!-- {{input_type}} -->
+          <a ng-click="doLoadPassword()" class="see mata-gampang"><i class="ion-eye mata-gampang"></i></a>
+        </div>
+
+        <div class="text-center divbutton">
+          <button type="submit" class="button new-buttonlogin" ng-disabled="disabledButton">Masuk</button>  
+        </div>
+
+      </form>
+    </div>
+
+    <div class="clearfix"></div>
+
+  </ion-content>
+</ion-view>

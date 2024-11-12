@@ -1,0 +1,64 @@
+{
+  "_from": "cordova-plugin-firebase-analytics",
+  "_id": "cordova-plugin-firebase-analytics@0.13.0",
+  "_inBundle": false,
+  "_integrity": "sha1-mi55wTc1fM5srbdNHt8J6RnGEEk=",
+  "_location": "/cordova-plugin-firebase-analytics",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-firebase-analytics",
+    "name": "cordova-plugin-firebase-analytics",
+    "escapedName": "cordova-plugin-firebase-analytics",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-firebase-analytics/-/cordova-plugin-firebase-analytics-0.13.0.tgz",
+  "_shasum": "9a2e79c137357cce6cadb74d1edf09e919c61049",
+  "_spec": "cordova-plugin-firebase-analytics",
+  "_where": "D:\\WORK\\IONIC\\bfi-srs-app - with-firebase-analytic",
+  "author": {
+    "name": "Maksim Chemerisuk",
+    "email": "chemerisuk@gmail.com",
+    "url": "https://github.com/chemerisuk"
+  },
+  "bugs": {
+    "url": "https://github.com/chemerisuk/cordova-plugin-firebase-analytics/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-firebase-analytics",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova plugin for Firebase Analytics",
+  "homepage": "https://github.com/chemerisuk/cordova-plugin-firebase-analytics#readme",
+  "keywords": [
+    "cordova",
+    "firebase",
+    "analytics",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-firebase-analytics",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chemerisuk/cordova-plugin-firebase-analytics.git"
+  },
+  "scripts": {
+    "postversion": "git push && git push --tags",
+    "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml"
+  },
+  "version": "0.13.0"
+}

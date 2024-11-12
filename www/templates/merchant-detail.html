@@ -1,0 +1,60 @@
+<ion-view view-title="Merchant" hide-nav-bar="true">
+    
+    <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+      <div class="menu-absolute new-menu-absolute">
+        <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+      </div>
+      <div class="navbartitle">Merchant Detail</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+      </div>
+      <div ng-controller="HeaderIconCtrl">
+          <div class="inbox" ng-show="showMessageIcon">
+          <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+          <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+        </div>
+        <div class="profileicon" ng-show="showMessageIcon">
+          <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+        </div>
+      </div>
+  </section>
+
+    <ion-content class="backgraybody">
+
+      <div style="height: 44px;"></div>
+
+        <div class="card marbot70px">
+          <div class="item">
+            <div>
+                <div class="col-xs-4 text-center">
+                    <img src="{{iconMapDetail}}" class="new-img-lokasi">
+                    <p class="new-text-blue-small font-proxima-regular"><small>Sekitar {{distanceDetail}} </small></p>
+                </div>
+                <div class="col-xs-8">
+                    <h2 class="new-h2titlelokasi">{{name}}</h2>
+                    <p class="new-text-address-lokasi font-proxima-regular" ng-bind-html="address"></p>
+                </div>
+            </div>
+            <div class="new-wrap-range">
+                <div class="row new-nopadding text-center" style="margin:auto;">
+                    <div class="col">
+                        <a href="tel:{{telpLocation}}" class="btn-callme" style="height:38px;"> <p class="new-for-white"><i class="icon ion-android-call"></i> <span class="next-detail-lokasi-text font-proxima-bold">{{telpLocation}}</span></p></a>
+                    </div>
+                    <div class="col">
+                        <a ng-click="openToMap('{{lati}}','{{longi}}')" class="new-btn-arah" style="height:38px;"> <p class="next-detail-lokasi-text font-proxima-bold"> <i class="icon ion-ios-navigate"></i> Petunjuk Arah </p></a></div>
+                    </div>
+                </div>
+            </div>
+
+          <div class="item item-body">
+            <div id="mapDetail" class="new-map-lokasi"></div>
+          </div>
+        </div>
+
+    </ion-content>
+    
+    <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

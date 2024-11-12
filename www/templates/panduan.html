@@ -1,0 +1,57 @@
+<ion-view view-title="{{nama}}" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+    <div class="menu-absolute new-menu-absolute">
+      <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+    </div>
+    <div class="navbartitle">{{nama}}</div>
+    <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+      <div class="new-notif-green {{indikator_green}}"></div>
+      <div class="new-notif-orange {{indikator_orange}}"></div>
+      <div class="new-notif-red {{indikator_red}}"></div>
+  </div>
+  <div ng-controller="HeaderIconCtrl">
+      <div class="inbox" ng-show="showMessageIcon">
+      <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+      <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+    </div>
+    <div class="profileicon" ng-show="showMessageIcon">
+      <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+    </div>
+  </div>
+
+</section>
+
+  <ion-content style="background-color: #f0f0f0;">   
+    <div style="height: 30px;"></div>
+    <div class="header-about">
+      <img src="assets/img/corporate.jpg" class="header-image-about">
+    </div> 
+    <div class="container">
+      <div class="content-panduan">
+        
+        <section class="new-content-icon new-content-icon-panduan">
+          <div class="text-center padleftright">
+            <div class="col-xs-12 marbot10">
+              <div class="col-xs-4" ng-repeat="item in items" ng-click="openPanduanList('{{item.id}}')" ng-if="item.pagetype !== 'content'">
+                <img ng-src="{{item.icon}}" class="new-img-80">
+                <p>{{item.submenu}}</p>
+              </div>
+              <div class="col-xs-4" ng-repeat="item in items" ng-click="openPanduanContent('service','{{item.id}}')" ng-if="item.pagetype === 'content'">
+                  <img ng-src="{{item.icon}}" class="new-img-80">
+                  <p>{{item.submenu}}</p>
+              </div>
+            </div>
+            <div class="col-xs-12 marbot25">&nbsp;</div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </ion-content>
+  
+    
+  <div ng-include src="'templates/footer.html'"></div>
+
+</ion-view>

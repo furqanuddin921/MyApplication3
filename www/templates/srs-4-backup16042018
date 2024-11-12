@@ -1,0 +1,107 @@
+<ion-view view-title="Smart Rating System" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+      <div class="menu-absolute new-menu-absolute">
+        <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+      </div>
+      <div class="navbartitle">Smart Rating System</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+    </div>
+    <div ng-controller="HeaderIconCtrl">
+        <div class="inbox" ng-show="showMessageIcon">
+        <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+        <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+      </div>
+      <div class="profileicon" ng-show="showMessageIcon">
+        <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+      </div>
+    </div>
+
+  </section>
+
+  <ion-content class="new-dashboar-color">
+
+    <div style="height: 40px;"></div>
+
+    <section>
+      <div class="card">
+        <div class = "item content-srs-1">
+          
+          <div class="rating">
+            <p>Saya mengundang Anda untuk mengisi formulir :</p>
+          </div>
+
+          <div class="contain-rating">
+            <h3>Smart Rating System</h3>
+            <p>BFI Finance</p>
+          </div>
+
+          <div class="soal-srs-1">
+            <form>
+
+              <div class="form-group ">
+                <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Apakah Anda akan merekomendasikan BFI kepada teman Anda ?</span></label>
+                <div class="form-check">
+                  <label>
+                    <input type="radio" name="radio" ng-model="formData.isRecommend" value="1" ng-change='recommnedChange(formData.isRecommend)'> <span class="label-text titletextinput-sec-1">Ya</span>
+                  </label>
+                </div>
+                <div class="form-check">
+                  <label>
+                    <input type="radio" name="radio" ng-model="formData.isRecommend" value="2" ng-change='recommnedChange(formData.isRecommend)'> <span class="label-text titletextinput-sec-1">Tidak</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group" ng-hide="hideField">
+                <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Jika Ya, siapakah nama teman Anda yang dapat Kami rekomendasikan untuk pembiayaan di BFI ?</span></label>
+                <input type="text" class="input form-control new-text-right new-borderbottom new-srs-form" name="recommendName" id="recommendName" ng-model="formData.recommendName" placeholder="contoh: Adi">
+              </div>
+
+              <div class="form-group" ng-hide="hideField">
+                <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Berapakah nomor telepon teman Anda yang dapat kami hubungi ?</span></label>
+                <div class="relative-srs">
+                  <input type="tel" class="input form-control new-text-right new-borderbottom new-srs-form srs-telepon" name="referenceValue" ng-model="referenceValue" placeholder="contoh: 081122334455">
+                  <span class="backgreen addsrstelp" ng-click="addTel(referenceValue)">
+                    <i class="icon ion-android-add white"></i></span>
+                </div>
+              </div>
+
+              <ion-list ng-hide="hideField">
+                <ion-item ng-repeat="referenceTel in formData.recommendPhone" class="item item-button-right">
+                    <label>{{referenceTel}}</label>
+                    <span ng-click="rmTel($index)" class="item-note">
+                      <p class="fontred">remove</p>
+                    </span>
+                </ion-item>
+              </ion-list>
+
+            
+              <!-- <div class="form-group" ng-repeat="referenceTel in formData.recommendPhone" ng-hide="hideField">
+                <label for="fullname" class="required item item-input"><span class="titletextinput-srs-1">{{referenceTel}}</span></label>
+              </div> -->
+
+              <div class="form-group ">
+                <label for="fullname" class="required item item-input new-item"><span class="titletextinput-srs-1">Apa yang perlu kami tingkatkan atau perbaiki ?</span></label>
+                <textarea class="input form-control new-text-right new-textarea" name="Notes" ng-model="formData.Notes" id="Notes" rows="3" placeholder="contoh: Meningkatkan pelayanan..."></textarea>
+              </div>
+              
+            </form>
+          </div>
+
+          <div class="text-center mar20bot20">
+            <button type="submit" class="button new-btn-submit-orange-1 new-btn-registered" ng-click="startSRS()"> Selanjutnya</button>
+          </div>
+      </div>
+    </section>
+
+    <div style="height: 49px; width: 100%;"></div>
+
+  </ion-content>
+
+  <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

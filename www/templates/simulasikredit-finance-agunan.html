@@ -1,0 +1,96 @@
+<ion-view view-title="Simulasi Kredit" hide-nav-bar="true">
+    <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+      <div class="menu-absolute new-menu-absolute">
+        <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+      </div>
+      <div class="navbartitle">Simulasi Kredit</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+      <div class="new-notif-orange {{indikator_orange}}"></div>
+      <div class="new-notif-red {{indikator_red}}"></div>
+      </div>
+      <div ng-controller="HeaderIconCtrl">
+          <div class="inbox" ng-show="showMessageIcon">
+          <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+          <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+        </div>
+        <div class="profileicon" ng-show="showMessageIcon">
+          <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+        </div>
+      </div>
+    </section>
+
+  <ion-content style="background-color: #fff;">
+
+    <div style="height: 70px;"></div>
+
+    <div class="container text-left font-proxima-regular">
+      <p>Simulasi Kredit adalah asuransi dan angsuran yang dibayarkan dimuka, atau masuk dalam total bayar pertama.</p>
+    </div>
+
+    <div class="container font-proxima-regular">
+      <form class="calculator">
+
+        <div class="row no-margin">
+          <div class="col-xs-5 width14 no-padding text-center stylekecil" style="width: 17% !important;">Jangka Waktu</div>
+          <div class="col-xs-5 width36 no-padding text-center stylekecil">Angsuran per Bulan</div>
+          <div class="col-xs-2 width16 no-padding text-center"></div>
+        </div>
+        <div ng-repeat="item in itemListArray | orderBy : 'tenor'">
+            
+            <div class="row nopadmarnewnewfix new-border1px">
+              <div class="col-xs-5 new-padding-top10 width14 text-center" style="font-size: 14px; color: #0c58a6; padding: 15px 0px !important;">{{item.tenor}} Bulan</div>
+              <div class="col-xs-5 no-padding width36 text-right" style="    padding-top: 13px !important; padding-bottom: 10px !important; padding-right: 70px !important;">Rp. {{item.angsuranval}},-</div>
+              <div ng-click="doSelanjutnya(item.tenor, item.angsuran)" class="col-xs-2 new-padding-top10 width16 text-center new-apply"> <i class="icon ion-arrow-right-c new-icon-apply"></i> <span style="font-size: 10px">Ajukan</span></div>
+            </div>
+        </div>
+        
+        <div class="clearfix"></div>
+        
+      </form>
+
+      <div style="height: 20px;"></div>
+
+      <div class="text-center">
+        <div><button type="submit" ng-click="doDownloadPDF()" class="button new-btn-submit-orange btn-register-text new-btn-registered font-proxima-regular" style="width: 70% !important;margin-top: 15px !important;">Download PDF</button></div>
+        <!-- <div><button type="submit" class="button new-btn-submit-orange btn-register-text new-btn-registered font-proxima-regular" style="width: 80% !important;margin-top: 15px !important;"> Email</button></div> -->
+      </div>
+
+    </div>
+
+    <div style="height: 20px;"></div>
+
+    <div class="clearfix"></div>
+    <div style="height: 49px; width: 100%;"></div>
+
+  </ion-content>
+
+        <div ng-controller="footerCtrl" class="tabs tabs-icon-top">
+            <a ng-click="doAuth()" class="tab-item" tour-step="6" tour-on-start="onStart" tour-on-leave="onLeave"> <!--href="#/customer/home" -->
+              <!-- <i class="icon ion-home"></i>
+              Home -->
+              <img src="assets/img/new-home.svg" class="new-icon-image">
+            </a>
+            <a href="#/app/simulasikredit/5000000" class="tab-item" tour-step="7" tour-on-start="onStart" tour-on-leave="onLeave">
+              <!-- <i class="icon ion-ios-calculator"></i>
+              Simulasi -->
+              <img src="assets/img/new-simulation.svg" class="new-icon-image">
+            </a>
+            <a ng-click="doShare()" class="tab-item" tour-step="8" tour-step="8" tour-on-start="onStart" tour-on-leave="onLeave">
+              <!-- <i class="icon ion-android-share-alt"></i>
+              Bagikan Aplikasi -->
+              <img src="assets/img/new-share-socmed.svg" class="new-icon-image">
+            </a>
+            <a href="#/app/signin" class="tab-item {{belumLogin}}" tour-step="9" tour-on-start="onStart" tour-on-leave="onLeave">
+              <!-- <i class="icon ion-log-in"></i>
+              Sign In -->
+              <img src="assets/img/new-signin.svg" class="new-icon-image">
+            </a>
+            <a ng-click="doLogout()" class="tab-item {{sudahLogin}}">
+              <!-- <i class="icon ion-log-in"></i>
+              Sign Out -->
+              <img src="assets/img/new-signup.svg" class="new-icon-image">
+            </a>
+        </div>
+    
+</ion-view>

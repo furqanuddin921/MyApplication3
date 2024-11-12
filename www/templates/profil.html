@@ -1,0 +1,138 @@
+<ion-view hide-nav-bar="true" view-title="Home">
+  <ion-content class="new-color-back">
+
+    <!--HEADER -->
+    <section class="bar-home-wrap" ng-controller="MenuCtrl">
+      <div class="menu-absolute">
+        <button menu-toggle="left"><span class="icon-menu"></span></button>
+      </div>
+      <div class="navbartitle">Profil</div>
+      <div class="logo-home"></div>
+      <div class="new-notif" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+      </div>
+      <div ng-controller="HeaderIconCtrl">
+          <div class="inbox" ng-show="showMessageIcon">
+          <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+          <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+        </div>
+        <div class="profileicon" ng-show="showMessageIcon">
+          <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="header-profile">
+      <img src="assets/img/profile-bg.jpg" class="header-image">
+
+      <!-- <div class="new-inner-header-profile text-center" style="width: 280px; margin: 10px auto; position: relative; padding: 10px 0px;">
+        <div class="new-edit-foto" ng-click="OpenImage()">
+            <i class="icon ion-camera"></i>
+        </div>
+        <img ng-src="{{imageNameProfil}}" class="new-img-150-profile" style="height: 120px; width: 120px; border-radius: 80px; border: 4px solid #ddd;box-shadow: 1px 1px 5px #444;">
+      </div> -->
+      <div class="new-profile-for-poin">
+        <div class="col-xs-12 new-left-name-profile">
+          <h2 class="new-profile-title">{{profileName}}</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="container containers">
+
+      <div class="" style="">
+        <ion-item class="div-new-ganti-password-profil item ng-binding" ng-click="toggleGroup(group)">
+          &nbsp;Profil
+        </ion-item>
+        <ion-item class="item-accordion item" style="border-color: transparent !important;">
+            <table class="table table-striped font-helvetica-neue">
+              <tbody>
+                <tr>
+                  <td class="text-title-profile-new ng-binding">Employee ID</td>
+                  <td>:</td>
+                  <td><input type="text" class="input form-control new-font-12-profile ng-pristine ng-untouched ng-valid ng-not-empty" name="employeeID" ng-model="form.employeeID" id="employeeID" placeholder="" disabled="true" style=""></td>
+                </tr>
+
+                <tr>
+                  <td class="text-title-profile-new">BFI Cabang</td>
+                  <td>:</td>
+                  <td><input type="text" class="input form-control new-font-12-profile ng-pristine ng-untouched ng-valid ng-not-empty" name="cabang" ng-model="form.cabang" id="cabang" placeholder="" disabled="true" style=""></td>
+                </tr>
+
+                <tr>
+                  <td class="text-title-profile-new">Nama Lengkap</td>
+                  <td>:</td>
+                  <td><input type="text" class="input form-control new-font-12-profile ng-pristine ng-untouched ng-valid ng-not-empty" name="fullname" ng-model="form.fullname" id="fullname" placeholder="" disabled="true" style=""></td>
+                </tr>
+            
+                <tr>
+                  <td class="text-title-profile-new">Handphone</td>
+                  <td>:</td>
+                  <td><input type="text" class="input form-control new-font-12-profile ng-pristine ng-untouched ng-valid ng-not-empty" name="handphone" ng-model="form.handphone" id="handphone" disabled="true" style=""></td>
+                </tr>
+
+                <tr>
+                  <td class="text-title-profile-new">Email</td>
+                  <td>:</td>
+                  <td><input type="text" class="input form-control new-font-12-profile ng-pristine ng-untouched ng-valid ng-not-empty" name="email" ng-model="form.email" id="email" disabled="true" style=""></td>
+                </tr>
+
+              </tbody>
+            </table>
+
+          <div class="container">
+      <!--profil are start-->
+      <table class="table table-striped font-helvetica-neue ng-hide" ng-show="dataRekeningAre">
+         <tbody><tr>
+           <td class="text-title-profile-new ng-binding">Agent ID</td>
+           <td>:</td>
+           <td><input type="text" class="input form-control new-font-12-profile ng-pristine ng-untouched ng-valid ng-not-empty" name="agentID" ng-model="form.agentID" id="agentID" placeholder="" disabled="true" style=""></td>
+         </tr>
+
+         <tr>
+           <td class="text-title-profile-new">BFI Cabang</td>
+           <td>:</td>
+           <td><input type="text" class="input form-control new-font-12-profile ng-pristine ng-untouched ng-valid ng-not-empty" name="cabang" ng-model="form.cabang" id="cabang" placeholder="" disabled="true" style=""></td>
+         </tr>
+
+         <tr>
+           <td class="text-title-profile-new">Nama Lengkap</td>
+           <td>:</td>
+           <td><input type="text" class="input form-control new-font-12-profile ng-pristine ng-untouched ng-valid ng-not-empty" name="fullname" ng-model="form.fullname" id="fullname" placeholder="" disabled="true" style=""></td>
+         </tr>
+         
+         
+         <tr>
+           <td class="text-title-profile-new">Handphone</td>
+           <td>:</td>
+           <td><input type="text" class="input form-control new-font-12-profile ng-pristine ng-untouched ng-valid ng-not-empty" name="handphone" ng-model="form.handphone" id="handphone" disabled="" style=""></td>
+         </tr>
+
+         <tr>
+           <td class="text-title-profile-new">Email</td>
+           <td>:</td>
+           <td><input type="email" class="input form-control new-font-12-profile ng-pristine ng-untouched ng-valid ng-valid-email ng-not-empty" name="email" ng-model="form.email" id="email" style=""></td>
+         </tr>
+      </tbody></table>
+      </div>
+      <!--profil are end-->
+      <div class="">
+       
+      <div class="text-center">
+        <!-- <button type="submit" class="button new-btn-submit-orange btn-register-text new-btn-registered font-proxima-regular" ng-click="doEditProfil()">Simpan</button> -->
+      </div>
+      
+     </div>
+     <div class="clearfix10"></div>
+          </ion-item>
+        </div>
+
+    </div>
+
+	<div style="height:80px; background-color: #fff;"></div>
+
+	</ion-content>
+    <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

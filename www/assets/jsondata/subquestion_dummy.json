@@ -1,0 +1,348 @@
+{
+    "header": {
+        "processTime": 8,
+        "errors": []
+    },
+    "data": [
+        {
+            "TypeAnswer": "QRB",
+            "ID": "1.3",
+            "Text": "Pihak lain yang ditunjuk (Siapa?)"
+        },
+        {
+            "TypeAnswer": "TB",
+            "ID": "1.3.1",
+            "Text": ""
+        },
+        {
+            "TypeAnswer": "QRB",
+            "ID": "10.6",
+            "Text": "Lainnya"
+        },
+        {
+            "TypeAnswer": "TB",
+            "ID": "10.6.1",
+            "Text": ""
+        },
+        {
+            "TypeAnswer": "QRB",
+            "ID": "2.1",
+            "Text": "Pernah"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "2.1.1",
+            "Text": "Surat"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "2.1.2",
+            "Text": "Telepon"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "2.1.3",
+            "Text": "Kunjungan"
+        },
+        {
+            "TypeAnswer": "QRB",
+            "ID": "3.6",
+            "Text": "Lainnya (sebutkan)"
+        },
+        {
+            "TypeAnswer": "TB",
+            "ID": "3.6.1",
+            "Text": ""
+        },
+        {
+            "TypeAnswer": "QRB",
+            "ID": "5.1",
+            "Text": "Ya"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.1",
+            "Text": "Adira Finance"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.10",
+            "Text": "Toyota Astra Finance"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.11",
+            "Text": "Koperasi"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.12",
+            "Text": "Bank"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.13",
+            "Text": "BPR"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.14",
+            "Text": "AEON"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.15",
+            "Text": "Indomobil Finance"
+        },
+        {
+            "TypeAnswer": "QCB",
+            "ID": "5.1.16",
+            "Text": "Lainnya"
+        },
+        {
+            "TypeAnswer": "TB",
+            "ID": "5.1.16.1",
+            "Text": ""
+        },
+        {
+            "TypeAnswer": "Q",
+            "ID": "5.1.17",
+            "Text": "Pembiayaan apa ?"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.17.1",
+            "Text": "KPR"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.17.2",
+            "Text": "Elektronik"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.17.3",
+            "Text": "Mobil/Motor"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.17.4",
+            "Text": "Alat Berat/Mesin"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.17.5",
+            "Text": "Sertifikat"
+        },
+        {
+            "TypeAnswer": "QCB",
+            "ID": "5.1.17.6",
+            "Text": "Lainnya"
+        },
+        {
+            "TypeAnswer": "TB",
+            "ID": "5.1.17.6.1",
+            "Text": ""
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.2",
+            "Text": "ACC Finance"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.3",
+            "Text": "BCA Finance"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.4",
+            "Text": "BII Finance"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.5",
+            "Text": "CIMB Niaga Finance"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.6",
+            "Text": "FIF"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.7",
+            "Text": "WOM"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.8",
+            "Text": "OTO Finance"
+        },
+        {
+            "TypeAnswer": "CB",
+            "ID": "5.1.9",
+            "Text": "BAF"
+        },
+        {
+            "TypeAnswer": "Q",
+            "ID": "6.1",
+            "Text": "CS (Customer Service)"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.1.1",
+            "Text": "1"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.1.2",
+            "Text": "2"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.1.3",
+            "Text": "3"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.1.4",
+            "Text": "4"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.1.5",
+            "Text": "5"
+        },
+        {
+            "TypeAnswer": "Q",
+            "ID": "6.2",
+            "Text": "Kasir"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.2.1",
+            "Text": "1"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.2.2",
+            "Text": "2"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.2.3",
+            "Text": "3"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.2.4",
+            "Text": "4"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.2.5",
+            "Text": "5"
+        },
+        {
+            "TypeAnswer": "Q",
+            "ID": "6.3",
+            "Text": "Marketing"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.3.1",
+            "Text": "1"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.3.2",
+            "Text": "2"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.3.3",
+            "Text": "3"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.3.4",
+            "Text": "4"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.3.5",
+            "Text": "5"
+        },
+        {
+            "TypeAnswer": "Q",
+            "ID": "6.4",
+            "Text": "Penagih"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.4.1",
+            "Text": "1"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.4.2",
+            "Text": "2"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.4.3",
+            "Text": "3"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.4.4",
+            "Text": "4"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.4.5",
+            "Text": "5"
+        },
+        {
+            "TypeAnswer": "Q",
+            "ID": "6.5",
+            "Text": "Call Center"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.5.1",
+            "Text": "1"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.5.2",
+            "Text": "2"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.5.3",
+            "Text": "3"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.5.4",
+            "Text": "4"
+        },
+        {
+            "TypeAnswer": "RB",
+            "ID": "6.5.5",
+            "Text": "5"
+        },
+        {
+            "TypeAnswer": "QRB",
+            "ID": "7.1",
+            "Text": "Ya (Dalam hal apa?)"
+        },
+        {
+            "TypeAnswer": "TB",
+            "ID": "7.1.1",
+            "Text": ""
+        }
+    ]
+}

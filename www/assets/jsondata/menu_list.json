@@ -1,0 +1,71 @@
+[
+	{
+		"icon": "assets/img/new-sidemenu-login.svg",
+		"name": "Login",
+		"link": "#/app/login",
+		"addClass": "require-not-login"
+	},
+	{
+		"icon": "assets/img/ico-akunsaya.png",
+		"name": "Akun Saya",
+		"imgtambah": "assets/img/new-menu-down-arrow.svg",
+		"addClass": "require-login"
+	},
+	{
+		"icon": "assets/img/ico-simulasiorder.png",
+		"name": "Simulasi Kredit",
+		"link": "#/app/simulasikredit",
+		"addClass": ""
+	},
+	{
+		"icon": "assets/img/ico-smartratingsystem.png",
+		"name": "Smart Rating System",
+		"link": "#/app/srs",
+		"addClass": "require-login"
+	},
+	{
+		"icon": "assets/img/ico-sec.png",
+		"name": "Survey Exit Customer",
+		"link": "#/app/sec",
+		"addClass": "require-login"
+	},
+	{
+		"icon": "assets/img/ico-productknowledge.png",
+		"name": "Product Knowledge",
+		"imgtambah": "assets/img/new-menu-down-arrow.svg",
+		"addClass": "",
+		"type": "knowledge"
+	},
+	{
+		"icon": "assets/img/ico-produklayananstandar.png",
+		"name": "Panduan Standar Layanan",
+		"imgtambah": "assets/img/new-menu-down-arrow.svg",
+		"addClass": "",
+		"type": "layanan"
+	},
+	{
+		"icon": "assets/img/ico-aftersalesservice.png",
+		"name": "After Sales Services",
+		"imgtambah": "assets/img/new-menu-down-arrow.svg",
+		"addClass": "",
+		"type": "service"
+	},
+	{
+		"icon": "assets/img/ico-terbaru.png",
+		"name": "Terbaru",
+		"imgtambah": "assets/img/new-menu-down-arrow.svg",
+		"addClass": ""
+	},
+	{
+		"icon": "assets/img/ico-aboutus.png",
+		"name": "Tentang BFI",
+		"link": "#/app/tentang-bfi",
+		"addClass": ""
+	},
+	{
+		"icon": "assets/img/ico-signout.png",
+		"name": "Keluar",
+		"link": "#/app/index/",
+		"addClass": "require-login"
+	}
+]

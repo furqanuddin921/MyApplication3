@@ -1,0 +1,29 @@
+  <div class="new-alert" ng-show="koneksiInternet" ng-controller="MeterSignalCtrl">
+    <div class="col-xs-8 HelveticaNeue-Thin font12">
+      Koneksi Internet Terputus, Cek Koneksi Internet!
+    </div>
+    <div class="col-xs-4 HelveticaNeue-Thin new-fontorange-alert" ng-click="tryAgain()">
+      COBA LAGI
+    </div>
+  </div>
+  <!-- FOOTER HIDDEN -->
+  <ion-footer-bar class="hide-on-keyboard-open">
+    <div ng-controller="footerCtrl" class="tabs tabs-icon-top">
+      <a ui-sref="app.index" class="tab-item" tour-step="6" tour-on-start="onStart" tour-on-leave="onLeave">
+        <img src="assets/img/new-home.svg" class="new-icon-image">
+      </a>
+      <a ui-sref="app.simulasikredit" class="tab-item" tour-step="7" tour-on-start="onStart" tour-on-leave="onLeave">
+        <img src="assets/img/new-simulation.svg" class="new-icon-image">
+      </a>
+      <a ng-click="doShare()" class="tab-item" tour-step="8" tour-step="8" tour-on-start="onStart" tour-on-leave="onLeave">
+        <img src="assets/img/new-share-socmed.svg" class="new-icon-image">
+      </a>
+      <a href="#/app/login" class="tab-item {{belumLogin}}" tour-step="9" tour-on-start="onStart" tour-on-leave="onLeave">
+        <img src="assets/img/new-signin.svg" class="new-icon-image">
+      </a>
+      <a ng-click="doLogout()" class="tab-item {{sudahLogin}}">
+        <img src="assets/img/new-signup.svg" class="new-icon-image">
+      </a>
+    </div>
+  </ion-footer-bar>
+  <!-- FOOTER HIDDEN --> 

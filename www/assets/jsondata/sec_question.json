@@ -1,0 +1,269 @@
+[
+    { 
+      "num"   :1,
+      "model" :1,
+      "ques"   :"Siapakah yang melakukan pengambilan asset dokumen (BPKB)",
+      "a"     :[
+          { 
+            "c":"Konsumen Sendiri / Pasangan"
+          },{ 
+            "c":"Keluarga Konsumen"
+          },{ 
+            "c":"Pihak lain yang ditunjuk (siapa?)"
+          }
+      ],
+      "b":"0"
+    },{ 
+      "num":2,
+      "model":2,
+      "ques":"Sebelumnya apakah Bapak / Ibu sudah pernah mendapatkan penawaran untuk pembiayaan kembali di BFI Finance ?",
+      "a":[
+          { 
+            "c" :"Pernah (Melalui apa?)"
+          },{ 
+            "c" :"Surat"
+          },{ 
+            "c" :"Telepon"
+          },{ 
+            "c" :"Kunjungan"
+          },{ 
+            "c" :"Tidak Pernah"
+          }
+      ],
+      "b" :"0"
+    },{ 
+      "num":3,
+      "model":3,
+      "ques":"Apakah alasan Bapak / Ibu tidak mengambil pembiayaan kembali di BFI ?",
+      "a":[
+          { 
+            "c" :"Mempunyai dana lebih"
+          },{ 
+            "c" :"Unit akan dijual / diganti unit baru"
+          },{ 
+            "c" :"Alih kontrak tidak resmi"
+          },{ 
+            "c" :"Ditolak pihak BFI ( Reject )"
+          },{ 
+            "c" :"Tidak mencapai kesepakatan ( Loss Deal )"
+          },{ 
+            "c" :"Lainnya (Sebutkan ?)"
+          }
+      ],
+      "b" :"0"
+    },{ 
+      "num":4,
+      "model":4,
+      "ques":"Hal apakah yang menjadi pertimbangan Bapak / Ibu dalam memilih perusahaan pembiayaan ?",
+      "a":[
+          { 
+            "c" :"Image perusahaan yang baik"
+          },{ 
+            "c" :"Bunga yang kooperatif"
+          },{ 
+            "c" :"Hadiah yang ditawarkan menarik"
+          },{ 
+            "c" :"Proses pembiayaan yang mudah dan cepat"
+          },{ 
+            "c" :"1-2 Hari"
+          },{ 
+            "c" :"3-4 Hari"
+          },{ 
+            "c" :"Adanya referensi dari teman"
+          }
+      ],
+      "b":"0"
+    },{ 
+      "num":5,
+      "model":5,
+      "ques":"Apakah Bapak / Ibu saat ini sedang melakukan pembiayaan di tempat lain ?",
+      "a":[
+          { 
+            "c" :"Ya"
+          },{ 
+            "c" :"Adira"
+          },{ 
+            "c" :"ACC"
+          },{ 
+            "c" :"BCA Finance"
+          },{ 
+            "c" :"BII Finance"
+          },{ 
+            "c" :"CIMB Niaga Finance"
+          },{ 
+            "c" :"FIF"
+          },{ 
+            "c" :"WOM"
+          },{ 
+            "c" :"OTO"
+          },{ 
+            "c" :"BAF"
+          },{ 
+            "c" :"Toyota Astra Finance"
+          },{ 
+            "c" :"Koperasi"
+          },{ 
+            "c" :"Bank"
+          },{ 
+            "c" :"BPR"
+          },{ 
+            "c" :"AEON"
+          },{ 
+            "c" :"Indomobil Finance"
+          },{ 
+            "c" :"Lainnya (Apa ?)"
+          }
+      ],
+      "b" :"Untuk ?",
+      "b1":[
+          { 
+            "c" :"KPR"
+          },{ 
+            "c" :"Elektronik"
+          },{ 
+            "c" :"Mobil / Motor"
+          },{ 
+            "c" :"Alat Berat / Mesin"
+          },{ 
+            "c" :"Sertifikat Rumah / Tanah"
+          },{ 
+            "c" :"Lainnya (Apa ?)"
+          }
+      ]
+    },{ 
+      "num":6,
+      "model":6,
+      "ques":"Bagaimanakah kepuasan Bapak / Ibu terhadap Karyawan kami berikut ini : (Apabila tidak pernah berhubungan dapat di kosongkan)",
+      "a":[],
+      "b" :"CS ( Customer Service )",
+      "b1":[
+          { 
+            "c" :"Sangat Tidak Puas"
+          },{ 
+            "c" :"Tidak Puas"
+          },{ 
+            "c" :"Cukup / Biasa Saja"
+          },{ 
+            "c" :"Puas"
+          },{ 
+            "c" :"Sangat Puas"
+          }
+      ],
+      "c" :"Kasir",
+      "c1":[
+          { 
+            "c" :"Sangat Tidak Puas"
+          },{ 
+            "c" :"Tidak Puas"
+          },{ 
+            "c" :"Cukup / Biasa Saja"
+          },{ 
+            "c" :"Puas"
+          },{ 
+            "c" :"Sangat Puas"
+          }
+      ],
+      "d" :"Marketing",
+      "d1":[
+          { 
+            "c" :"Sangat Tidak Puas"
+          },{ 
+            "c" :"Tidak Puas"
+          },{ 
+            "c" :"Cukup / Biasa Saja"
+          },{ 
+            "c" :"Puas"
+          },{ 
+            "c" :"Sangat Puas"
+          }
+      ],
+      "e" :"Call Center",
+      "e1":[
+          { 
+            "c" :"Sangat Tidak Puas"
+          },{ 
+            "c" :"Tidak Puas"
+          },{ 
+            "c" :"Cukup / Biasa Saja"
+          },{ 
+            "c" :"Puas"
+          },{ 
+            "c" :"Sangat Puas"
+          }
+      ]
+    },{ 
+      "num":7,
+      "model":7,
+      "ques":"Selama menjadi konsumen BFI Finance, apakah Bapak / Ibu pernah mengalami pelayanan yang mengecewakan ?  saat pelunasan ?",
+      "a":[
+          { 
+            "c" :"Ya (Dalam hal apa?)"
+          },{ 
+            "c" :"Tidak"
+          }
+      ],
+      "b":"0"
+    },{ 
+      "num":8,
+      "model":8,
+      "ques":"Secara keseluruhan, bagaimana tingkat kepuasan Bapak/Ibu terhadap pelayanan yang diberikan BFI  Finance selama ini ?",
+      "a":[
+          { 
+            "c" :"Sangat Tidak Puas"
+          },{ 
+            "c" :"Tidak Puas"
+          },{ 
+            "c" :"Cukup / Biasa Saja"
+          },{ 
+            "c" :"Puas"
+          },{ 
+            "c" :"Sangat Puas"
+          }
+      ],
+      "b":"0"
+    },{ 
+      "num":9,
+      "model":9,
+      "ques":"Kapan kiranya Bapak / Ibu butuh pembiayaan kembali ?",
+      "a":[
+          { 
+            "c" :"1 Bulan kedepan"
+          },{ 
+            "c" :"2 Bulan kedepan"
+          },{ 
+            "c" :"3 Bulan kedepan"
+          },{ 
+            "c" :"4 Bulan kedepan"
+          },{ 
+            "c" :"5 Bulan kedepan"
+          },{ 
+            "c" :"6 Bulan kedepan"
+          },{ 
+            "c" :"7 - 12 Bulan kedepan"
+          },{ 
+            "c" :"> 12 Bulan kedepan"
+          }
+      ],
+      "b":"0"
+    },{ 
+      "num":10,
+      "model":10,
+      "ques":"Menurut Bapak/Ibu, perbaikan dalam hal apakah yang harus kami lakukan agar Bapak/Ibu mau kembali melakukan pembiayaan di BFI Finance ?",
+      "a":[
+          { 
+            "c" :"Persyaratan dan proses pembiayaan kembali yang mudah dan cepat"
+          },{ 
+            "c" :"Mendapatkan hadiah langsung"
+          },{ 
+            "c" :"Nilai pencairan sesuai kebutuhan"
+          },{ 
+            "c" :"Angsuran / Bunga lebih kompetitif"
+          },{ 
+            "c" :"Pelayanan karyawan lebih ramah dan informatif"
+          },{ 
+            "c" :"Lainnya (Apa ?)"
+          }
+      ],
+      "b":"0"
+    }
+  ]

@@ -1,0 +1,120 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+h2 {
+  color: #0c58a6; }
+
+.bar-stable {
+  background-color: #0c58a6 !important; }
+
+.title {
+  color: #FFF !important; }
+
+.bar-stable .button.button-clear {
+  color: #FFF !important; }
+
+.bar-home-wrap {
+  width: 100%;
+  background: #0c58a6; }
+
+.menu-absolute {
+  position: absolute;
+  left: 10px;
+  top: 10px; }
+
+.menu-absolute button {
+  background: none;
+  border: none;
+  cursor: pointer; }
+
+.menu-absolute button span {
+  font-size: 22px;
+  color: #FFF; }
+
+.logo-home {
+  width: 50px;
+  height: 50px;
+  margin: auto; }
+
+.logo-home img {
+  width: 50px; }
+
+.inbox {
+  width: 25px;
+  top: 16px;
+  position: absolute;
+  right: 12px; }
+
+.notif {
+  position: inherit;
+  background-color: red;
+  color: white;
+  padding: 3px 0px 0px 0px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  bottom: 8px;
+  right: 15px;
+  font-size: 11px;
+  text-align: center; }
+
+.new-font-regular {
+  font-family: "helvetica-neue"; }
+
+@font-face {
+  font-family: "helvetica-neue";
+  src: url("../font/helvetica-neue/HelveticaNeue-Medium.otf"); }
+
+img.new-icon-image {
+  width: 25px;
+  height: 25px;
+  margin-top: 13px; }
+
+.new-content-icon {
+  margin-top: 25px;
+  margin-bottom: 90px; }
+
+.new-content-icon p {
+  color: #0c58a6;
+  line-height: 1.4;
+  font-family: 'helvetica-neue';
+  font-size: 12px;
+  padding-top: 5px; }
+
+.padleftright {
+  padding-left: 20px;
+  padding-right: 20px; }
+
+@media (max-width: 373px) {
+  .padleftright p {
+    font-size: 10px; } }
+
+img.new-img-100 {
+  width: 100%; }
+
+.newloginbackground {
+  background-color: #eee; }
+
+.logo-login {
+  width: 80px;
+  margin-bottom: 20px; }
+
+.login-text input.input-login {
+  width: 100% !important;
+  padding: 10px; }
+
+img.new-logologin {
+  box-shadow: 1px 1px 3px #ccc; }

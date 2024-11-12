@@ -1,0 +1,129 @@
+<ion-view hide-nav-bar="true" view-title="Home">
+  <ion-content class="new-color-back">
+
+    <!--HEADER -->
+    <!-- <section class="bar-home-wrap" ng-controller="MenuCtrl"> -->
+    <section class="bar-home-wrap">
+      <div class="menu-absolute">
+        <button menu-toggle="left"><span class="icon-menu"></span></button>
+      </div>
+      <div class="logo-home"></div>
+      <div class="new-notif" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+      </div>
+      <!-- <div class="inbox" ng-click="doInbox()" ng-controller="InboxCtrl"> -->
+      <div ng-controller="HeaderIconCtrl">
+        <div class="inbox" ng-show="showMessageIcon">
+          <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+          <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+        </div>
+        <div class="profileicon" ng-show="showMessageIcon">
+          <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+        </div>
+      </div>
+      
+    </section>
+
+    <!-- SLIDER -->
+<!--
+    <section class="slider-showcase">
+      <div class="slide-wrapper">
+        <ion-slide-box does-continue="true" auto-play="true" slide-interval="5000" show-pager="true">
+           <ion-slide>
+              <div class = "box1">
+                <div class="slider1">
+                  <img ng-src="assets/img/homebanner1.jpg" class="img-responsive">
+                </div>
+              </div>
+           </ion-slide>
+
+           <ion-slide>
+              <div class = "box2">
+                <div class="slider1">
+                  <img ng-src="assets/img/homebanner1.jpg" class="img-responsive">
+                </div>
+              </div>
+           </ion-slide>
+
+           <ion-slide>
+              <div class = "box3">
+                <div class="slider1">
+                  <img ng-src="assets/img/homebanner1.jpg" class="img-responsive">
+                </div>
+              </div>
+           </ion-slide>
+
+        </ion-slide-box>
+      </div>
+    </section>
+-->
+    <section class="slider-showcase" ng-controller="SlideHome">
+      <div class="slide-wrapper" ng-show="!showSlider">
+        <ion-slide-box delegate-handle="sliderBan" pager="true">
+          <ion-slide tour-step="1" tour-on-start="onStart" tour-on-transition="onTransition" tour-on-leave="finish" class="new-dashboar-color">
+            <div class="box">
+              <div class="slider1">
+<!--                <img ng-src="{{sliders.imageName}}" class="img-responsive" ui-sref="{{urlSliderDetail}}">-->
+                <img src="assets/img/default-image.png">
+              </div>
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+      </div>
+      <div class="slide-wrapper" ng-show="showSlider">
+        <ion-slide-box delegate-handle="sliderBan" does-continue="true" auto-play="true" slide-interval="{{::interval}}" on-slide-changed="slideChanged(index)" pager="true">
+          <ion-slide ng-repeat="sliders in event.prizes" options="options" tour-step="3" tour-on-start="onStart" tour-on-transition="onTransition" tour-on-leave="finish" class="new-dashboar-color">
+            <div class="box">
+              <div class="slider1">
+<!--                <img ng-src="{{sliders.imageName}}" class="img-responsive" ui-sref="{{urlSliderDetail}}">-->
+                <img ng-src="{{sliders.imageName}}" class="img-responsive" ui-sref="{{urlSliderDetail}}" on-error-src="assets/img/default-image.png">
+              </div>
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+      </div>
+    </section>
+    <!-- SLIDER -->
+    
+
+    <section class="new-content-icon">
+      <div class="container text-center padleftright">
+        <div class="col-xs-12">
+          <div class="col-xs-4" ui-sref="app.panduan({idPanduan: 'Product Knowledge'})">
+            <img src="assets/img/ico-produkknowledge.png" class="new-img-100">
+            <p>Product Knowledge</p>
+          </div>
+          <div class="col-xs-4" ui-sref="app.promo">
+            <img src="assets/img/new-berita-promo.png" class="new-img-100">
+            <p>Berita dan Promo</p>
+          </div>
+          <div class="col-xs-4" ui-sref="app.reward">
+            <img src="assets/img/new-uber-milyaran.png" class="new-img-100">
+            <p>Uber Milyaran</p>
+          </div>
+        </div>
+        <div class="col-xs-12 marbot25">
+          <div class="col-xs-4" ui-sref="app.simulasikredit">
+            <img src="assets/img/big-simulasi-front.png" class="new-img-100">
+            <p>Simulasi Kredit</p>
+          </div>
+          <div class="col-xs-4" ui-sref="app.srs" ng-show="showDashboardIcon">
+            <img src="assets/img/big-srs-front.png" class="new-img-100">
+            <p>Smart Rating System</p>
+          </div>  
+          <div class="col-xs-4" ui-sref="app.sec" ng-show="showDashboardIcon">
+            <img src="assets/img/big-sec-front.png" class="new-img-100">
+            <p>Survey Exit Customer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <div class="separatetabbottomindex separatetabbottom"></div>
+  </ion-content>
+  
+  <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

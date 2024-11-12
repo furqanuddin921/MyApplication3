@@ -1,0 +1,66 @@
+<ion-side-menus enable-menu-with-back-views="false" ng-controller="MenuCtrl">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-content class="bg-side-menu">
+      <div class="logo-side-wrap">
+        <div class="new-padtopbot" ng-show="menuBeforeLoginMenu">
+          <div class="col-xs-8">
+            <p class="new-welcome-menu">Selamat Datang</p>
+          </div>
+        </div>
+  
+        <div class="new-padtopbot" ng-show="menuAfterLoginMenu">
+          <div class="col-xs-4">
+            <img ng-src="{{imageFile}}" class="img-circle new-img-100 new-marlef15">
+          </div>
+          <div class="col-xs-8">
+            <p class="new-welcome-menu">Selamat Datang</p>
+            <p class="new-name-menu">{{fullname}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center" style="color:#ddd;font-size:14px;" ng-show="loadMenu">
+        <ion-spinner icon="dots"></ion-spinner>
+        <br>
+        Updating Menu..
+        <br>
+        <br>
+      </div>
+      <ion-list ng-show="!loadMenu">
+        <div ng-repeat="group in groups track by group.name">
+          <ion-item class="new-heightgreat-menu" style="position: relative;" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group), '{{group.addClass}}' : true }" href="{{group.linkk}}">
+            <img ng-src="{{group.icon}}" class="new-iconside">{{group.name}}
+            <i class="icon" style="position: absolute;width: 20px;right: 20px" ng-show="group.imgtambah != null" ng-class="isGroupShown(group) ? 'ion-chevron-up' : 'ion-chevron-down'"></i>
+            <!-- <img ng-src="{{group.imgtambah}}" style="position: absolute;width: 20px;right: 20px"> -->
+          </ion-item>
+          <div ng-repeat="item in group.items">
+            <ion-item href="{{item.link}}" class="new-item-accordion item-content-new ion-active-tambahan item-accordion" ng-click="toggleItem(item)" ng-show="isGroupShown(group)">
+              <img ng-src="{{item.icon}}" class="new-iconside new-iconside-new"> {{item.submenu}}  <img ng-src="{{item.imgtambah}}" style="position: absolute;width: 20px;right: 20px">
+            </ion-item>
+            <ion-item menu-close href="{{subItem.link}}" class="new-item-accordion item-content-new ion-active-tambahan item-accordion item-sub-child" ng-repeat="subItem in item.subItem" ng-show="isItemShown(item)">
+              <img ng-src="{{subItem.icon}}" class="new-iconside new-iconside-new"> {{subItem.submenu}}
+            </ion-item>
+          </div>
+        </div>
+      </ion-list>   
+        
+      <div class="footer-side-menu" >
+        <p>Copyright @ 2018 PT BFI Finance Indonesia Tbk</p>
+        <p>{{versioningapps}}</p>
+      </div>  
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

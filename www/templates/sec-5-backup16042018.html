@@ -1,0 +1,134 @@
+<ion-view view-title="Survey Exit Customer" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+    <div class="menu-absolute new-menu-absolute">
+      <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+    </div>
+    <div class="navbartitle">Survey Exit Customer</div>
+    <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+      <div class="new-notif-green {{indikator_green}}"></div>
+      <div class="new-notif-orange {{indikator_orange}}"></div>
+      <div class="new-notif-red {{indikator_red}}"></div>
+    </div>
+    <div ng-controller="HeaderIconCtrl">
+        <div class="inbox" ng-show="showMessageIcon">
+        <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+        <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+      </div>
+      <div class="profileicon" ng-show="showMessageIcon">
+        <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+      </div>
+    </div>
+
+  </section>
+
+    <div class="topsec backgreen">
+      <div class="text-center">
+        Kuesioner SEC
+      </div>
+    </div>
+
+  <ion-content class="new-dashboar-color">
+
+    <div style="height: 75px;"></div>
+    
+    <section>
+      <div ng-show="loadingImage" class="card">
+        <img src="assets/img/loadingsquares.gif" class="new-img-produk">
+      </div>
+      <div ng-show="!loadingImage" class="card">
+        <div class = "item content-sec-4 no-padding padtop15">
+          <br>
+            <div class="form-group" ng-repeat="ques in questionList | orderBy:'ques.ID'">
+              
+                <!-- PERTANYAAN -->
+                <div ng-if="'' == ques.TypeAnswer" class="row title-sec no-margin0">
+                  <div class="col-xs-1">{{ques.ID}}.</div>
+                  <div class="col-xs-11"><h2>{{ques.Text}}</h2></div>
+                </div>
+
+                <!-- JAWABAN LAPIS - 1 -->
+                <div  ng-if="'' != ques.TypeAnswer" class="row martop5">
+                  <div class="col-xs-1"></div>
+                  <div class="col-xs-11">
+
+                    <div class="form-check" ng-if="'RB' == ques.TypeAnswer">
+                      
+                      <label class="radio">
+                        <input type="radio" name="{{ques.questionnumber}}" value="{{ques.questionnumber}}" ng-model="ques.questionnumber"  ng-click="loads(ques.ID,ques.Text,ques.TypeAnswer,ques.questionnumber,ques.subquestionnumber,question2List,questionList)"> <span class="label-text titletextinput-sec-1">{{ques.Text}}</span>
+                        <span class="check"></span>
+                      </label>
+                    </div>
+
+                    <div class="form-check" ng-if="'CB' == ques.TypeAnswer">
+                      <label class="checkbox">
+                        <input type="checkbox" name="checkbox{{ques.ID}}" ng-model="questionList[ques.ID]" ng-click="loads(ques.ID,ques.Text,ques.TypeAnswer,ques.questionnumber,ques.subquestionnumber,question2List,questionList)"> <span class="label-text titletextinput-sec-1">{{ques.Text}}</span>
+                        <span class="check"></span>
+                      </label>
+                    </div>
+
+                     <!-- JAWABAN LAPIS - 2 -->
+                    <div class="form-check" ng-if="'Q' == ques.TypeAnswer || 'QRB' == ques.TypeAnswer">
+                      <div ng-repeat="ques2 in question2List | orderBy:'ques.ID'">
+                        
+                        <div ng-if="(ques2.ID.substr(0,3)).includes(ques.ID)">
+                          
+                          <div ng-if="'Q' == ques2.TypeAnswer">
+                            <label>
+                              <span>{{ques2.Text}}</span>
+                              <span class="check"></span>
+                            </label>
+                          </div>
+                          
+                          <div style="padding-left: 25px;">
+                            <div ng-if="'RB' == ques2.TypeAnswer">
+                              <label class="radio" ng-style="questionSub{{ques2.subquestionnumber}}">
+                                <input type="radio" name="{{(ques2.subquestionnumber).substr(0,3)}}" ng-click="loads(ques2.ID,ques.Text+'-'+ques2.Text,ques.TypeAnswer,ques.questionnumber,ques.subquestionnumber,question2List,questionList)"> <span class="label-text titletextinput-sec-1">{{ques2.Text}}</span>
+                                <span class="check"></span>
+                              </label>
+                            </div>
+                            <div ng-if="'CB' == ques2.TypeAnswer">
+                              <label class="checkbox" ng-style="questionSub{{ques2.subquestionnumber}}">
+                                <input type="checkbox" name="cb_{{ques2.subquestionnumber}}" id="cb_{{ques2.subquestionnumber}}" ng-model="ques2.subquestionnumber" ng-click="loads(ques2.ID,ques.Text+'-'+ques2.Text,ques.TypeAnswer,ques.questionnumber,ques.subquestionnumber,question2List,questionList)"> <span class="label-text titletextinput-sec-1">{{ques2.Text}}</span>
+                                <span class="check"></span>
+                              </label>
+                            </div>
+                            <div ng-if="'TB' == ques2.TypeAnswer">
+                              <label ng-style="questionSub{{ques2.subquestionnumber}}">
+
+                                <div ng-show="ques2.subquestionnumber == ''">
+                                  <input style="border:1px solid #ddd;width:100%;display:block;padding:5px;margin-left:-25px;" type="text" name="text" ng-model="ques2.subquestionnumber" ng-focus="loads(ques2.ID,ques.Text+'-'+ques2.Text,ques.TypeAnswer,ques.questionnumber,ques.subquestionnumber,question2List,questionList)">
+                                </div>
+                                <div ng-show="ques2.subquestionnumber != ''">
+                                  <input style="border:1px solid #ddd;width:100%;display:block;padding:5px;margin-left:-25px;" type="text" name="text" ng-focus="loads(ques2.ID,ques.Text+'-'+ques2.Text,ques.TypeAnswer,ques.questionnumber,ques.subquestionnumber,question2List,questionList)">
+                                </div>
+
+                                <span class="label-text titletextinput-sec-1"></span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+            </div>          
+
+          <div class="text-center btn-sec-4">
+            <button type="submit" class="button new-btn-submit-orange-1 new-btn-registered" ng-click="doNext()"> Selanjutnya</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div style="height: 49px; width: 100%;"></div>
+
+  </ion-content>
+
+    
+  <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

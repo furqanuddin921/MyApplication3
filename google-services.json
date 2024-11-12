@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "495458577245",
+    "firebase_url": "https://bfi-smart-rating-system.firebaseio.com",
+    "project_id": "bfi-smart-rating-system",
+    "storage_bucket": "bfi-smart-rating-system.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:495458577245:android:0b6f8028ddf393d6",
+        "android_client_info": {
+          "package_name": "com.bfi.srs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "495458577245-1d3cabj1gmgh6jgfcm5el1d2vo2gt7fs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ_9GqICGiy90WKcyB2CkVWri49BizEK8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

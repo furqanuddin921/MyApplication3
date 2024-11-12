@@ -1,0 +1,103 @@
+<ion-view view-title="Content" hide-nav-bar="true">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+      <div class="menu-absolute new-menu-absolute">
+        <button ng-click="doBack()"><span  class="ion-ios-arrow-back new-font-icon-big"></span></button>
+      </div>
+      <div class="navbartitle">{{title}}</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+      </div>
+      <div ng-controller="HeaderIconCtrl">
+          <div class="inbox" ng-show="showMessageIcon">
+          <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+          <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+        </div>
+        <div class="profileicon" ng-show="showMessageIcon">
+          <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+        </div>
+      </div>
+
+  </section>
+
+  <ion-content class="new-dashboar-color">
+
+    <div style="height: 45px;"></div>
+
+    <div class="card new-produk-marbot30" ng-show="type == 'knowledge'">
+      <div class = "item nopadmarnewnewfix">
+        <img ng-src="{{data.listImage.replace('LIVE', '')}}" class="new-img-produk tab-new-img-produk">
+      </div>
+
+      <div class = "item item-body new-padtopbot10">
+        <h1 class="informasiprodukh1">{{data.title}}</h1>
+        <h5 class="forlastupdate">Last Update</h5>
+        <h6 class="textdate">18 Januari 2018</h6>
+        <div class="des-produk" ng-bind-html="data.content | sanitizer">
+        </div>
+      </div>
+    </div>
+
+    <div ng-show="type == 'layanan'">
+      <div class="divangka8">
+        <img src="assets/img/angka8.png" class="img-responsive" alt="">
+      </div>
+  
+      <div class="boxtoppenanganan">
+        <p>{{data.title}}</p>
+      </div>
+  
+      <div style="height: 130px;"></div>
+      
+      <div class="layanan-padding new-produk-marbot30">
+        <div class="new-padtopbot10 layanan-title">
+          <h1 class="informasiprodukh1"></h1>
+
+          <div class="des-produk" ng-bind-html="data.content | sanitizer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-show="type == 'video'">
+      <div class="service-padding new-produk-marbot30">
+        <div class="new-padtopbot10 layanan-title">
+          <div class="des-produk" ng-bind-html="data.content | sanitizer">
+          </div>
+        </div>
+      </div>    
+    </div>
+
+    <div ng-show="type == 'service'">     
+      <div class="service-padding new-produk-marbot30">
+        <div class="new-padtopbot10 layanan-title">
+          <div class="des-produk" ng-bind-html="data.content | sanitizer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="share-promo-detail">
+      <p class="font-proxima-regular">SHARE</p>
+      <div class="row no-padding no-margin">
+            <div class="col" ng-repeat="socialList in social.listSocial">
+            <button class="button button-positive topbot50 button-block border-radius20" ng-click="sharingFacebook('{{socialList.sharingMessage}}','{{socialList.sharingLink}}')">
+              <i class="icon ion-social-facebook">&nbsp;</i> <span class="font-proxima-regular">Facebook</span>
+            </button></div>
+          <div class="col" ng-repeat="socialList in social.listSocial">
+            <button class="button button-block topbot50 button-calm border-radius20" ng-click="sharingTwitter('{{socialList.sharingMessage}}','{{socialList.sharingImage}}','{{socialList.sharingLink}}')">
+              <i class="icon ion-social-twitter">&nbsp;</i> <span class="font-proxima-regular">Twitter</span>
+            </button></div>
+            </div>
+    </div> -->
+
+    <div style="height: 49px; width: 100%;"></div>
+
+  </ion-content>
+    
+  <div ng-include src="'templates/footer.html'"></div>
+
+</ion-view>

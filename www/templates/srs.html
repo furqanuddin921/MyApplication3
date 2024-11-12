@@ -1,0 +1,47 @@
+<ion-view view-title="Smart Rating System" hide-nav-bar="true" scroll="false">
+
+  <section class="new-bar-home-wrap bar-home-wrap font-helvetica-neue" ng-controller="MenuCtrl">
+    
+      <div class="menu-absolute">
+        <button menu-toggle="left"><span class="icon-menu"></span></button>
+      </div>
+      <div class="navbartitle">Smart Rating System</div>
+      <div class="new-notif new-notif-single" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+    </div>
+    <div ng-controller="HeaderIconCtrl">
+      <div class="inbox" ng-show="showMessageIcon">
+        <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+        <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+      </div>
+      <div class="profileicon" ng-show="showMessageIcon">
+        <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+      </div>
+    </div>
+
+  </section>
+
+  <ion-content class="new-dashboar-color">
+
+    <div style="height: 40px;"></div>
+
+    <section>
+      <div class="card">
+        <div class = "item content-srs text-center">
+          <div class="text-center">
+            <img src="assets/img/srs/srs-full.jpg" class="tab_imghomesrs" alt="">
+          </div>
+          <div class="text-center">
+            <button type="submit" class="button new-btn-submit-green new-btn-registered" ng-click="startSRS()"> Selanjutnya</button>
+          </div>
+      </div>
+    </section>
+
+    <div class="separatetabbottom"></div>
+
+  </ion-content>
+
+  <div ng-include src="'templates/footer.html'"></div>
+</ion-view>

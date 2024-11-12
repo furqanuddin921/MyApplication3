@@ -1,0 +1,58 @@
+<ion-view hide-nav-bar="true" view-title="Home">
+  <ion-content class="backgraybody">
+
+    <!--HEADER -->
+    <section class="bar-home-wrap" ng-controller="MenuCtrl">
+      <div class="menu-absolute">
+        <button menu-toggle="left"><span class="icon-menu"></span></button>
+      </div>
+      <div class="navbartitle">Tentang BFI</div>
+      <div class="logo-home"></div>
+      <div class="new-notif" ng-controller="SignalMeter">
+        <div class="new-notif-green {{indikator_green}}"></div>
+        <div class="new-notif-orange {{indikator_orange}}"></div>
+        <div class="new-notif-red {{indikator_red}}"></div>
+      </div>
+      <div ng-controller="HeaderIconCtrl">
+        <div class="inbox" ng-show="showMessageIcon">
+          <div class="notif {{hide_inbox}}">{{unreadInbox}}</div>
+          <p ng-click="doMessage()"><img src="assets/img/new-inbox.svg" class="img-responsive"></p>
+        </div>
+        <div class="profileicon" ng-show="showMessageIcon">
+          <p ng-click="doProfil()"><img src="assets/img/new-edit-profile.svg" class="img-responsive"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDER -->
+    <section class="slider-showcase">
+      <div class="slide-wrapper">
+        <div class="header-about">
+          <img src="assets/img/corporate.jpg" class="header-image-about">
+        </div>
+      </div>
+    </section>
+    <!-- SLIDER -->
+    
+    <section class="corporate">
+      <!-- <div class="card">
+        <div class="item"> -->
+          <div class="container">
+              <div class="content-corporate">
+              <h2>BFI Kini</h2>
+              <p>PT BFI Finance Indonesia Tbk (“BFI” atau ”Perusahaan”) berdiri pada tahun 1982 sebagai PT Manufacturer Hanover Leasing Indonesia, sebuah perusahaan patungan antara Manufacturer Hanover Leasing Corporation dari Amerika Serikat dengan pemegang saham lokal. BFI adalah perusahaan pembiayaan terlama di Indonesia sekaligus menjadi perusahaan pembiayaan pertama yang mencatatkan sahamnya di Bursa Efek Jakarta dan Bursa Efek Surabaya (sekarang disebut Bursa Efek Indonesia atau “BEI”). Perusahaan melakukan go public pada Mei 1990 dengan kode saham BFIN.</p>
+              <p>Setelah menjalankan proses restrukturisasi utang yang bersumber dari krisis keuangan 1998, Perusahaan secara resmi berganti nama menjadi PT BFI Finance Indonesia Tbk pada 2001.</p>
+              <p>Saat ini, 43,65% saham BFI dimiliki oleh konsorsium Trinugraha Capital SA (yang antara lain terdiri dari TPG dan Northstar Group). Sisanya dimiliki oleh pemegang saham institusi lokal dan internasional, serta pemegang saham publik.</p>
+              <p>Kegiatan usaha BFI terdiri dari pembiayaan kendaraan bermotor, alat-alat berat, truk dan mesin-mesin, rumah dan ruko, serta pembiayaan untuk pengadaan barang dan jasa. Kegiatan usaha Perusahaan saat ini sebagian besar terfokus pada pembiayaan kendaraan roda empat bekas.</p>
+              <p>BFI memiliki jaringan pemasaran terbesar di nusantara, dengan 205 kantor cabang dan 62 gerai yang tersebar di 33 dari 34 provinsi di Indonesia, dan didukung lebih dari 7.000 karyawan (per 31 Desember 2015).</p>
+            </div>
+          </div>
+        <!-- </div>
+      </div> -->
+    </section>
+
+    <div style="height: 50px; width: 100%;"></div>
+  </ion-content>
+    
+  <div ng-include src="'templates/footer.html'"></div>
+</ion-view>
